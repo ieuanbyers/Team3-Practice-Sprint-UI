@@ -36,7 +36,7 @@ app.listen(3000, () => {
 });
 
 app.get('/',  async (req:Request, res:Response) => {
-    res.render('pizza', {title: 'New Pizza Time'});
+
 })
 
 require('./controller/jobRoleController')(app);
