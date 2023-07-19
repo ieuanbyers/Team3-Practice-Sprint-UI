@@ -1,5 +1,5 @@
 {
-  "name": "nodeninjas-node.js-project",
+  "name": "Team3-Practice-Sprint-UI",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -17,14 +17,25 @@
   "dependencies": {
     "@types/express-session": "^1.17.7",
     "axios": "^1.4.0",
-    "eslint": "^8.45.0",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "nunjucks": "^3.2.4"
   },
   "devDependencies": {
+    "@dvsa/eslint-config-ts": "^3.0.0",
     "@types/express": "^4.17.17",
     "@types/node": "^20.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/typescript-estree": "^6.1.0",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.3",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-security": "^1.7.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }
