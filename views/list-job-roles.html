@@ -22,17 +22,15 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Job Role ID</th>
                 <th scope="col">Job Title</th>
-                <th scope="col">Salary</th>
+                <th scope="col">More Info</th>
             </tr>
             </thead>
             <tbody>
             {% for role in jobroles %}
             <tr>
-                <td> {{ role.roleID }}</td>
                 <td> {{role.roleTitle}}</td>
-                <td> {{ role.salary }}</td>
+                <td><a href="{{role.link}}">View</a></td>
             </tr>
             {% endfor %}
             </tbody>
