@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Job Roles</title>
@@ -30,7 +30,7 @@
             {% for role in jobroles %}
             <tr>
                 <td> {{role.roleTitle}}</td>
-                <td><a href="{{role.link}}">View</a></td>
+                <td><a class="btn btn-primary" href="{{role.link}}" style="background-color: #0072ed" role="button">Link</a></td>
             </tr>
             {% endfor %}
             </tbody>

@@ -7,7 +7,6 @@ module.exports.getJobRoles = async function(): Promise<JobRole[]>
     try
     {
         const response = await axios.get('http://localhost:8080/api/job-roles')
-        console.log(response.data)
 
         return response.data
     } catch(e)
