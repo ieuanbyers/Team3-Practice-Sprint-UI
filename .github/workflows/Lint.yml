@@ -19,7 +19,7 @@ jobs:
         with:
           eslint-args: '--ignore-path=.gitignore --quiet'
           ignore-path: .eslintignore
-          ignore-pattern: |
+          ignore-patterns: |
             dist/
             node_modules/
           extensions: 'ts,tsx'
