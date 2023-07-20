@@ -7,7 +7,6 @@
     "hotReloadDev": "npx nodemon ./app.ts",
     "start": "npx tsc && cp -R views dist && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx eslint app.ts"
   },
   "author": "",
   "license": "ISC",
