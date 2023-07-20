@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Roles</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header class="bg-dark text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Roles</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container mt-4">
+            <section id="orders" class="mt-4">
+                <h2>All Orders</h2>
+                {% if rolebandlevels and rolebandlevels.length > 0 %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Role Title</th>
+                            <th scope="col">Band Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for RoleBandResponse in rolebandlevels %}
+                        <tr>
+                            <td>{{ RoleBandResponse.roleName }}</td>
+                            <td>{{ RoleBandResponse.bandName }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                    There are no roles
+                {% endif %}
+            </section>
+        </main>
+    </body>
+</html>
