@@ -13,6 +13,7 @@
   "bugs": {
     "url": "https://github.com/ieuanbyers/Team3-Practice-Sprint-UI/issues"
   },
+  
   "homepage": "https://github.com/ieuanbyers/Team3-Practice-Sprint-UI#readme",
   "dependencies": {
     "@types/express-session": "^1.17.7",
