@@ -48,3 +48,4 @@ app.get('/', async (req: Request, res: Response)=>
         title: 'Hack Street Boys',
     });
 });
+require('./controller/trainingController')(app);
