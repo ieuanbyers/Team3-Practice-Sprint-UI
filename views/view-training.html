@@ -33,8 +33,12 @@
                             <td>{{ trainingCourse.category }}</td>
                             <td><a href="{{ trainingCourse.link }}">View Course</a></td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
+                {% else %}
+                <p>There are currently no training courses for this band.</p>
+                {% endif %}
             </section>
         </main>
     </body>
