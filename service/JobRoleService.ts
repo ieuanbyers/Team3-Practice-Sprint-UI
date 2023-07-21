@@ -14,6 +14,3 @@ module.exports.getJobRoles = async function(): Promise<JobRole[]>
         throw new Error('Could not get job roles')
     }
 }
-
-
-
