@@ -2,7 +2,7 @@ import { JobRole } from "../model/JobRole";
 
 const axios = require('axios');
 
-module.exports.getJobRoles = async function(): Promise<JobRole[]>
+module.exports.getJobRoles = async function()
 {
     try
     {
@@ -11,6 +11,6 @@ module.exports.getJobRoles = async function(): Promise<JobRole[]>
         return response.data
     } catch(e)
     {
-        throw new Error('Could not get job roles')
+        return new Error('Could not get job roles')
     }
 }
