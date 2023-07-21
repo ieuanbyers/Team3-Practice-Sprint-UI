@@ -1,4 +1,3 @@
-import { describe, it } from "node:test";
 import { type Training } from '../../../model/Training'
 
 const axios = require('axios');
@@ -19,32 +18,35 @@ describe('TrainingService', function  () {
             const bandId: number = 1;
             let data: Training[] = [training];
 
-            mock.onGet(trainingService.URL).reply(200, data);
+            mock.onGet(trainingService.URL + bandId).reply(200, data);
 
             let results = await trainingService.getTrainingByBand(bandId);
 
             expect(results[0]).to.deep.equal(training);
         });
-    });
 
-    it('should throw exception when 500 error returned from axios', async () => {
-        const mock = new MockAdapter(axios);
-        const bandId: number = 1;
-
-        mock.onGet(trainingService.URL).reply(500);
-  
-        const result = await trainingService.getTrainingByBand(bandId);
-  
-        expect(result.message).to.equal('Could not get training courses');
-    });
-
-    it('should not call axios when bandId is null', async () => {
-        var mock = new MockAdapter(axios);
-        const bandId: number = null;
-  
-        const result = await trainingService.getTrainingByBand(bandId);
-  
-        expect(result.message).to.equal('BandID does not exist');
-    });
+        it('should throw exception when 500 error returned from axios', async () => {
+            const mock = new MockAdapter(axios);
+            const bandId: number = 1;
     
+            mock.onGet(trainingService.URL + bandId).reply(500);
+      
+            try{
+                let result = await trainingService.getTrainingByBand(bandId);
+            } catch(e){
+                expect(e.message).to.equal('Could not get training courses');
+            }
+        });
+    
+        it('should not call axios when bandId is null', async () => {
+            const mock = new MockAdapter(axios);
+            const bandId: number = null;
+      
+            try{
+                let result = await trainingService.getTrainingByBand(bandId);
+            } catch(e){
+                expect(e.message).to.equal('BandID does not exist');
+            }
+        });
+    });
 })

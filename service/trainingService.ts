@@ -1,6 +1,9 @@
 import { type Training } from '../model/Training'
 
 const axios = require('axios')
+axios.defaults.baseURL = process.env.API_URL;
+
+module.exports.URL = '/api/training/';
 
 module.exports.getTrainingByBand = async function (bandId: number): Promise<Training[]> {
   if(!bandId){

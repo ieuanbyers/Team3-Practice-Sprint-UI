@@ -6,7 +6,7 @@
   "scripts": {
     "hotReloadDev": "npx nodemon ./app.ts",
     "start": "npx tsc && cp -R views dist && node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/unit/**/*.ts --require ts-node/register"
   },
   "author": "",
   "license": "ISC",
@@ -22,8 +22,10 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
+    "@types/mocha": "^10.0.1",
     "@types/express-session": "^1.17.7",
     "@types/node": "^20.4.0",
+    "axios-mock-adapter": "^1.21.5",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/typescript-estree": "^6.1.0",
     "chai": "^4.3.7",
