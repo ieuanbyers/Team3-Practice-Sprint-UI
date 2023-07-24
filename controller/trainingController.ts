@@ -6,9 +6,11 @@ const trainingService = require('../service/TrainingService')
 module.exports = function (app: Application) {
   app.get('/view-training/:id', async (req: Request, res: Response) => {
     let data: Training[];
+    let categories: string[];
 
     try {
-      data = await trainingService.getTrainingByBand(req.params.id)
+      categories = await trainingService.getTrainingCategories();
+      data = await trainingService.getTrainingByBand(req.params.id);
     } catch (e) {
       console.error(e)
     }
