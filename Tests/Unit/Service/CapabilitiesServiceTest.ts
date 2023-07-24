@@ -1,3 +1,4 @@
+import { Capability } from "../../../Model/Capability";
 
 
 var axios = require('axios');
@@ -6,20 +7,26 @@ var chai = require('chai');
 const expect = chai.expect;
 const capabilityService= require ('../../../Service/CapabilityService')
 
+const capability: Capability = {
+
+  capabilityId: 1,
+    name: "Applied Innovation",
+    description: "You don't have access"
+}
+
 describe('CapabilityService', function () {
-describe('getCapabilities', function() {
-    it('should return list of capabilities from response', async () => {
+  describe('getCapabilities', function() {
+    it('should return capability info from response', async () => {
 
-        var mock = new MockAdapter(axios)
+      let mock = new MockAdapter(axios);
 
-        
+            const data = [capability];
 
-        mock.onGet(capabilityService.URL).reply(200);
+            mock.onGet(capabilityService.URL).reply(200, data);
 
-        var results = await capabilityService.getCapabilities();
+            let results = await capabilityService.getCapabilities();
 
-        expect(results).to.deep.equal(200);
-
+            expect(results[0]).to.deep.equal(capability);
     })
 
     it('should throw exception when 500 error returned from axios', async () => {
@@ -33,5 +40,5 @@ describe('getCapabilities', function() {
           expect(error.message).to.equal('Could not get capabilities')
         }
       })
+  })
 })
-} )
