@@ -1,4 +1,4 @@
-import { JobRole } from "../model/JobRole";
+import { JobRole } from "../Model/JobRole";
 
 const axios = require('axios');
 

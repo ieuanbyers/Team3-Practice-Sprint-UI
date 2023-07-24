@@ -1,4 +1,4 @@
-import { Capability } from "../model/Capability";
+import { Capability } from "../Model/Capability";
 
 const axios = require('axios');
 
@@ -11,7 +11,7 @@ module.exports.getCapabilities = async function(): Promise<Capability[]>
         return response.data
     } catch(e)
     {
-        throw new Error('Could not get job roles')
+        throw new Error('Could not get capabilities')
     }
 }
 
