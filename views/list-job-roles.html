@@ -23,14 +23,12 @@
             <thead>
             <tr>
                 <th scope="col">Job Title</th>
-                <th scope="col">More Info</th>
             </tr>
             </thead>
             <tbody>
             {% for role in jobroles %}
             <tr>
                 <td> {{role.roleTitle}}</td>
-                <td><a class="btn btn-primary" href="{{role.link}}" style="background-color: #0072ed" role="button">Link</a></td>
             </tr>
             {% endfor %}
             </tbody>

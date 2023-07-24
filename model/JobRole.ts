@@ -2,5 +2,5 @@ export class JobRole
 {
     roleId?: number
     jobTitle?: string
-    specLink?: string
+    jobRoleFamilyId?: number
 }

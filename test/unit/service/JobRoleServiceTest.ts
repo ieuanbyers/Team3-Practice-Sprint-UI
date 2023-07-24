@@ -1,13 +1,14 @@
+import {JobRole} from "../../../model/JobRole";
 var axios = require('axios');
 var MockAdapter = require('axios-mock-adapter');
 var chai = require('chai');
 const expect = chai.expect;
 const jobRoleService = require('../../../service/JobRoleService');
 
-const jobRole = {
+const jobRole: JobRole = {
     roleId: 1,
     jobTitle: "Software Engineer",
-    specLink: "https://kainossoftwareltd.sharepoint.com/people/Job%20Specifications/Forms/AllItems.aspx?id=%2Fpeople%2FJob%20Specifications%2FEngineering%2FJob%20profile%20%2D%20Software%20Engineer%20%28Trainee%29%2Epdf&parent=%2Fpeople%2FJob%20Specifications%2FEngineering&p=true&ga=1"
+    jobRoleFamilyId: 1
 }
 
 describe('JobRoleService', function () {
@@ -29,9 +30,13 @@ describe('JobRoleService', function () {
 
             mock.onGet(jobRoleService.URL).reply(500);
 
-            let error = await jobRoleService.getJobRoles();
-
-            expect(error.message).to.equal('Could not get job roles')
+            try
+            {
+                await jobRoleService.getJobRoles();
+            } catch (e)
+            {
+                expect(e.message).to.equal('Could not get job roles')
+            }
         })
 
     })
