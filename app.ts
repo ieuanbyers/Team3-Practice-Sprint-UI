@@ -1,8 +1,7 @@
-import  { Express, Request, Response } from "express";
-import session = require("express-session");
-const express = require('express');
-const path = require('path');
-const nunjucks = require('nunjucks');
+import express, { Request, Response} from "express";
+import session from "express-session";
+import path from "path";
+import nunjucks from "nunjucks";
 
 const app = express();
 

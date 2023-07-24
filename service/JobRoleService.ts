@@ -1,7 +1,5 @@
-import {AxiosResponse} from "axios";
+import axios, {AxiosResponse} from "axios";
 import {FailedToGetJobsError} from "../Errors/FailedToGetJobsError";
-
-const axios = require('axios');
 
 module.exports.getJobRoles = async function()
 {
