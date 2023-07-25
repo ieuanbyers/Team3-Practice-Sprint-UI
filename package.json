@@ -7,8 +7,8 @@
     "hotReloadDev": "npx nodemon ./app.ts",
     "start": "node dist/app.js",
     "build": "npx tsc && cp -R views dist",
-    "test": "mocha Tests/Unit/**/*.ts --require ts-node/register",
-    "test-ui": "mocha Tests/UI/**/*.js"
+    "test": "mocha tests/unit/**/*.ts --require ts-node/register",
+    "test-ui": "mocha tests/UI/**/*.js"
   },
   "author": "",
   "license": "ISC",
