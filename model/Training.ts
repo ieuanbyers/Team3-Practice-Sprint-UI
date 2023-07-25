@@ -1,4 +1,4 @@
-export class Training {
+export interface Training {
   name?: string
   link?: string
   category?: string
