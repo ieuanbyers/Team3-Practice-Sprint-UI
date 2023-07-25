@@ -24,5 +24,5 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - run: export baseURL="http://localhost:8080" && npm test
+    - run: npm test
     - run: pa11y-ci
