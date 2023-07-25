@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CapabilityRequest } from "./model/capabilityRequestlower";
+import { CapabilityRequest } from "./model/capabilityRequest";
 
 const express = require('express');
 const app = express();

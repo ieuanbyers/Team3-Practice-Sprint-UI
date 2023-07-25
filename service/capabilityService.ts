@@ -1,4 +1,4 @@
-import { CapabilityRequest } from "../model/capabilityRequestlower"
+import { CapabilityRequest } from "../model/capabilityRequest"
 const CapabilityRequestValidator = require('../validator/capabilityRequestValidator')
 const axios = require('axios');
 
