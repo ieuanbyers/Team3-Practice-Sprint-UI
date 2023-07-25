@@ -1,4 +1,4 @@
-export class RoleBandResponse {
+export interface RoleBandResponse {
     roleId?: number
     bandId?: number
     roleTitle?: string
