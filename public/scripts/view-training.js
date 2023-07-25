@@ -1,6 +1,7 @@
 let options = {
         searchable: true, 
-        sortable: true, 
+        sortable: true,
+        perPage: 5, 
         classes: {
             active: "active",
             disabled: "disabled",
