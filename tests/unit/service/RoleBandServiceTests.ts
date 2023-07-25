@@ -5,7 +5,7 @@ var MockAdapter = require('axios-mock-adapter');
 var chai = require('chai');  
 
 const expect = chai.expect;
-const roleBandService = require('../../../service/rolebandservice.ts');
+const roleBandService = require('../../../service/rolebandservice');
 
 const roleBand: roleband = {
     roleId: 1,
