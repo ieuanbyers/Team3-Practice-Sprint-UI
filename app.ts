@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import session = require("express-session");
+const session = require('express-session');
 
 const express = require('express');
 const path = require('path');
 const nunjucks = require('nunjucks');
 
-const app = express();
+export const app = express();
 
 const appViews = path.join(__dirname, '/views/');
 

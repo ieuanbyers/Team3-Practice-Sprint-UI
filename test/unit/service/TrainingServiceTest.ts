@@ -40,7 +40,7 @@ describe('TrainingService', function  () {
     
         it('should not call axios when bandId is null', async () => {
             const mock = new MockAdapter(axios);
-            const bandId: number = null;
+            const bandId: null = null;
       
             try{
                 let result = await trainingService.getTrainingByBand(bandId);
