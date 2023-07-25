@@ -1,4 +1,4 @@
-import { RoleBandResponse } from "../../../model/RoleBandResponse";
+import { roleband } from "../../../model/roleband";
 
 var axios = require('axios');
 var MockAdapter = require('axios-mock-adapter');
@@ -7,7 +7,7 @@ const expect = chai.expect;
 const roleBandService = require('../../../service/RoleBandService');
 
 
-const roleBand: RoleBandResponse = {
+const roleBand: roleband = {
     roleId: 1,
     bandId: 1,
     roleTitle: "Software Engineer",

@@ -1,15 +1,13 @@
 import { Request } from 'express';
 import { Response } from 'express';
-import { RoleBandResponse } from './model/RoleBandResponse';
+import { roleband } from './model/roleband';
 const express = require('express');
 const path = require('path');
 const nunjucks = require('nunjucks');
 const res = require('express/lib/response');
 const session = require('express-session');
 
-
-
-const app = express();
+export const app = express();
 
 const appViews = path.join(__dirname, '/views/')
 
@@ -33,7 +31,7 @@ app.use(session({secret: 'NOT HARDCODED SECRET', cookie: {maxAge: 60000}}));
 
 declare module "express-session" {
     interface SessionData {
-        roleBandResponse: RoleBandResponse
+        roleBandResponse: roleband
     }
 }
 

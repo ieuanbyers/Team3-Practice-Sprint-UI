@@ -1,5 +1,5 @@
 import { Application, Request, Response } from "express";
-import { RoleBandResponse } from "../model/RoleBandResponse";
+import { roleband } from "../model/roleband";
 
 const roleBandService = require('../service/RoleBandService')
 
@@ -7,7 +7,7 @@ module.exports = function(app: Application)
 {
     app.get('/role-band-levels', async(req: Request, res: Response) =>
     {
-        let data: RoleBandResponse[];
+        let data: roleband[];
 
         try
         {
@@ -17,6 +17,6 @@ module.exports = function(app: Application)
             console.error(e);
         }
 
-        res.render('list-role-band-levels', {rolebandlevels: data})
+        res.render('list-role-band-levels', {roleBands: data})
     })
 }

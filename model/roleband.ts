@@ -1,4 +1,4 @@
-export interface RoleBandResponse {
+export interface roleband {
     roleId?: number
     bandId?: number
     roleTitle?: string

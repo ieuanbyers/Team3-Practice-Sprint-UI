@@ -1,11 +1,10 @@
-import { RoleBandResponse } from "../model/RoleBandResponse";
+import { roleband } from "../model/roleband";
 const axios = require('axios');
+const baseURL = process.env.baseURL;
 
-axios.defaults.baseURL = process.env.API_URL;
-
-module.exports.getRoleBands = async function (): Promise<RoleBandResponse> {
+module.exports.getRoleBands = async function (): Promise<roleband> {
     try {
-        const response = await axios.get(`${this.baseURL}/api/role-band-levels`)
+        const response = await axios.get(`${baseURL}/api/role-band-levels`);
         
         return response.data
     } catch (e) {
