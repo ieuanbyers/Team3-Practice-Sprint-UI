@@ -25,4 +25,4 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm test
-    - run: pa11y-ci
+    - run: npx pa11y-ci
