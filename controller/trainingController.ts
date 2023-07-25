@@ -5,7 +5,7 @@ const trainingService = require('../service/TrainingService')
 
 module.exports = function (app: Application) {
   app.get('/view-training/:id', async (req: Request, res: Response) => {
-    let data: Training[];
+    let data: Training[] = [];
 
     try {
       data = await trainingService.getTrainingByBand(req.params.id)
