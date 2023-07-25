@@ -1,5 +1,5 @@
 {
     "urls": [
-        "views/list-job-roles.html"
+        "./views/list-job-roles.html"
     ]
 }
