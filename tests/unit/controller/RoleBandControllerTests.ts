@@ -2,9 +2,9 @@ import supertest from "supertest";
 import { app } from "../../../app";
 import sinon, { SinonStub } from "sinon";
 
-const roleBandService = require('../../../service/rolebandservice');
+const roleBandService = require('../../../service/rolebandservice.ts');
 
-describe('jobrolecontroller', function () {
+describe('rolebandcontroller', function () {
     let serviceStub: SinonStub;
 
     before(() => {
