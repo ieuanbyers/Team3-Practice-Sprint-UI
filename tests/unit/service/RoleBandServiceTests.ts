@@ -3,15 +3,15 @@ import { roleband } from "../../../model/roleband";
 var axios = require('axios');
 var MockAdapter = require('axios-mock-adapter');
 var chai = require('chai');  
+
 const expect = chai.expect;
 const roleBandService = require('../../../service/rolebandservice');
-
 
 const roleBand: roleband = {
     roleId: 1,
     bandId: 1,
     roleTitle: "Software Engineer",
-    bandName: "Apprentice"
+    bandName: "Associate"
 }
 
 describe('RoleBandService', function () {
