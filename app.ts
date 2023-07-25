@@ -3,7 +3,7 @@ import session from "express-session";
 import path from "path";
 import nunjucks from "nunjucks";
 
-const app = express();
+export const app = express();
 
 const appViews = path.join(__dirname,'/views/');
 
