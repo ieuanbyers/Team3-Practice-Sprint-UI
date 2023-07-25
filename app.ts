@@ -45,4 +45,4 @@ app.get('/', (req: Request, res: Response) => {
     });
 }); 
 
-require ('./controller/RoleBandController')(app);
+require ('./controller/rolebandcontroller')(app);
