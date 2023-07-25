@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JobFamily</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<header class="bg-dark text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Job Families</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="container mt-4">
+    <section id="job-roles" class="mt-4">
+        <h2>Job Families</h2>
+        {% if jobfamilies and jobfamilies.length > 0 %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Job Families</th>
+                <th scope="col">More Info</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jobFamily in jobfamilies %}
+            <tr>
+                <td> {{jobFamily.name}}</td>
+                <td>{{jobFamily.capabilityName}}</td>
+                <td><a class="btn btn-primary" href="{{role.link}}" style="background-color: #0072ed" role="button">Link</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        There are no Job Families.
+        {% endif %}
+    </section>
+</main>
+</body>
+</html>
