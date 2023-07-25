@@ -1,5 +1,5 @@
 {
     "urls": [
-        "./views/list-job-roles.html"
+        "http://localhost:3000/job-roles"
     ]
 }
