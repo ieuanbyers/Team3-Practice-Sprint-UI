@@ -1,7 +1,7 @@
 import { Application, Request, Response } from "express";
 import { roleband } from "../model/roleband";
 
-const roleBandService = require('../service/RoleBandService')
+const roleBandService = require('../service/rolebandservice')
 
 module.exports = function(app: Application)
 {
