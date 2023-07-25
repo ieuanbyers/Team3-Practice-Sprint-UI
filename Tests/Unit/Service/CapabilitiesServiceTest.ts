@@ -1,4 +1,4 @@
-import { Capability } from "../../../Model/Capability";
+import { Capability } from "../../../model/Capability";
 
 
 var axios = require('axios');

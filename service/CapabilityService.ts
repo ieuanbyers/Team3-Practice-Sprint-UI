@@ -1,4 +1,4 @@
-import { Capability } from "../Model/Capability";
+import { Capability } from "../model/Capability";
 
 const axios = require('axios');
 
