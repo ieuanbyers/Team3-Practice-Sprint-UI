@@ -7,7 +7,7 @@
     "hotReloadDev": "npx nodemon ./app.ts",
     "build": "npx tsc && cp -R views dist",
     "start": "npm run build && node dist/app.js",
-    "test": "mocha test/unit/**/*.ts --require ts-node/register"
+    "test": "mocha test/unit/**/*.ts --require ts-node/register --exit"
   },
   "author": "",
   "license": "ISC",
