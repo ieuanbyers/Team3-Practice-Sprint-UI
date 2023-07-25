@@ -1,6 +1,5 @@
 import { Application, Request, Response } from "express";
 import { JobRole } from "../model/JobRole";
-import {FailedToGetJobsError} from "../Errors/FailedToGetJobsError";
 
 const jobRoleService = require('../service/JobRoleService')
 
@@ -15,7 +14,6 @@ module.exports = function(app: Application)
         } catch (e)
         {
             console.error(e.message);
-            return "winner";
         }
         res.render('list-job-roles', {jobroles: jobRoles})
     })

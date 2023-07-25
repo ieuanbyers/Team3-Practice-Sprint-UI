@@ -6,7 +6,7 @@
   "scripts": {
     "hotReloadDev": "npx nodemon ./app.ts",
     "build": "npx tsc && cp -R views dist",
-    "start": "node dist/app.js",
+    "start": "npm run build && node dist/app.js",
     "test": "mocha test/unit/**/*.ts --require ts-node/register"
   },
   "author": "",

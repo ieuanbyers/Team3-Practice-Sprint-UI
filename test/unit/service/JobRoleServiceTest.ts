@@ -5,24 +5,23 @@ var chai = require('chai');
 const expect = chai.expect;
 const jobRoleService = require('../../../service/JobRoleService');
 
-const jobRole: JobRole = {
+const testData: JobRole = {
     roleId: 1,
     jobTitle: "Software Engineer",
     jobRoleFamilyId: 1
 }
 
 describe('JobRoleService', function () {
-    describe('getJobRoles', function () {
         it('should return job roles info from response', async () => {
             let mock = new MockAdapter(axios);
 
-            const data = [jobRole];
+            const data = [testData];
 
             mock.onGet(jobRoleService.URL).reply(200, data);
 
             let results = await jobRoleService.getJobRoles();
 
-            expect(results[0]).to.deep.equal(jobRole);
+            expect(results).to.deep.equal(data[0]);
         })
 
         it('should throw exception when 500 error returned from axios', async () => {
@@ -38,6 +37,4 @@ describe('JobRoleService', function () {
                 expect(e.message).to.equal('Could not get job roles')
             }
         })
-
-    })
 })
