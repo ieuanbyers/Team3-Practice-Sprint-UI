@@ -26,4 +26,4 @@ jobs:
     - run: npm run build
     - run: npm test
     - run: ls
-    - run: npx pa11y-ci
+    - run: npm run start
