@@ -1,4 +1,4 @@
-import { CapabilityRequest } from "../model/CapabilityRequest";
+import { CapabilityRequest } from "../model/capabilityRequestlower";
 
 module.exports.validateCapabilityRequest = function (capabilityRequest: CapabilityRequest): string {
     

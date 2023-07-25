@@ -1,4 +1,4 @@
-export class CapabilityRequest {
+export interface CapabilityRequest {
     name?: String
     description?: String
 }

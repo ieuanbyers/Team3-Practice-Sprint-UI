@@ -1,5 +1,5 @@
-import { CapabilityRequest } from "../model/CapabilityRequest"
-const CapabilityRequestValidator = require('../validator/CapabilityRequestValidator')
+import { CapabilityRequest } from "../model/capabilityRequestlower"
+const CapabilityRequestValidator = require('../validator/capabilityRequestValidator')
 const axios = require('axios');
 
 module.exports.createCapability = async function (capabilityRequest: CapabilityRequest): Promise<number> {
