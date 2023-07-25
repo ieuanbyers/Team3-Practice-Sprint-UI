@@ -1,5 +1,5 @@
 import { Application, Request, Response } from "express";
-import { JobFamily } from "../Model/JobFamily";
+import { JobFamily } from "../model/JobFamily";
 
 const jobFamilyService = require('../service/JobFamilyService')
 

@@ -1,4 +1,4 @@
-import { JobRole } from "../../../Model/JobRole";
+import { JobRole } from "../../../model/JobRole";
 
 var axios = require('axios');
 var MockAdapter = require('axios-mock-adapter');
