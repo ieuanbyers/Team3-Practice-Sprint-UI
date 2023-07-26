@@ -1,7 +1,7 @@
 import {Application, Response, Request} from "express";
 import {Login} from "../model/auth";
 
-const authService = require('../service/authSerivce')
+const authService = require('../service/authService')
 
 module.exports = function (app: Application)
 {

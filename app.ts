@@ -26,7 +26,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(session({ secret: 'NOT HARDCODED SECRET', cookie:{maxAge: 60000}}))
 
 declare module "express-session" {
-
+    interface SessionData {
+        token: string;
+    }
 }
 
 app.listen(3000, () => {
@@ -38,3 +40,4 @@ app.get('/',  async (req:Request, res:Response) => {
 })
 
 require('./controller/jobRoleController')(app);
+require('./controller/authController')(app)
