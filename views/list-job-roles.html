@@ -27,11 +27,11 @@
             </tr>
             </thead>
             <tbody>
-            {% for role in jobroles %}
+            {% for jobrole in jobroles %}
             <tr>
-                <td> {{role.roleTitle}}</td>
-                <td>{{role.capabilityName}}</td>
-                <td><a class="btn btn-primary" href="{{role.link}}" style="background-color: #0072ed" role="button">Link</a></td>
+                <td> {{jobrole.roleTitle}}</td>
+                <td> {{jobrole.capabilityName}}</td>
+                <td><a class="btn btn-primary" href="{{jobrole.link}}" style="background-color: #0072ed" role="button">Link</a></td>
             </tr>
             {% endfor %}
             </tbody>
