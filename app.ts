@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { CompetencyRequest } from "./model/competencyRequest";
 
 const express = require('express');
-const app = express();
+export const app = express();
 const path = require('path');
 const nunjucks = require('nunjucks');
 const session = require('express-session')

@@ -1,13 +1,13 @@
 import { CompetencyRequest } from "../../../model/competencyRequest";
 
-var axios = require('axios');
-var MockAdapter = require('axios-mock-adapter');
-var chai = require('chai');  
+const axios = require('axios');
+const MockAdapter = require('axios-mock-adapter');
+const chai = require('chai');  
 const expect = chai.expect;
 const competencyService = require('../../../service/competencyService');
 const { Console } = require('console');
 const comp = {
-    competencyService: "Test",
+    competencyName: "Test",
     description: "Testing",
     bandName: "You guessed it, testing",
 }
@@ -15,8 +15,8 @@ const comp = {
 describe('competencyService', function () {
     describe('getCompsWithBand', function () {
       it('should return comps from response', async () => {
-        const mock = new MockAdapter(axios);
-        const bandId: number = 1;
+        var mock = new MockAdapter(axios);
+        const bandId = 1;
         let data: CompetencyRequest[] = [comp];
 
         mock.onGet(competencyService.URL + bandId).reply(200, data);

@@ -6,7 +6,7 @@ const competencyService = require('../service/competencyService')
 
 module.exports = function(app: Application) {
 
-    app.get('/competencies/:id', async (req: Request, res: Response) => {
+    app.get('/list-comps/:id', async (req: Request, res: Response) => {
         let data: CompetencyRequest[];
 
         try {

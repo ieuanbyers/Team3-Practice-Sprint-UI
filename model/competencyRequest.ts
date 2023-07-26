@@ -1,4 +1,4 @@
-export class CompetencyRequest  {
+export interface CompetencyRequest  {
     cometencyName?: string
     description?: string
     bandName?: string
