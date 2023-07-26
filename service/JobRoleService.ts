@@ -6,7 +6,7 @@ module.exports.getJobRoles = async function()
     try
     {
         const baseURL = process.env.baseURL
-        const res:AxiosResponse = await axios.get(`${baseURL}/api/job-roles`)
+        const res:AxiosResponse = await axios.get(`http://localhost:8080/api/job-roles`)
         return res.data;
     } catch(e)
     {
