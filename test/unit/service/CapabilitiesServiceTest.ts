@@ -4,7 +4,7 @@ import MockAdapter from "axios-mock-adapter"
 
 var chai = require('chai');  
 const expect = chai.expect;
-const capabilityService= require ('../../../Service/CapabilityService')
+const capabilityService= require ('../../../service/CapabilityService')
 
 const capability: Capability = {
   capabilityId: 1,
