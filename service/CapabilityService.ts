@@ -1,12 +1,14 @@
+import axios, { AxiosResponse } from "axios";
 import { Capability } from "../model/Capability";
 
-const axios = require('axios');
+
 
 module.exports.getCapabilities = async function(): Promise<Capability[]>
 {
     try
     {
-        const response = await axios.get('http://localhost:8080/api/capabilities')
+        const baseURL = process.env.baseURL
+        const response:AxiosResponse = await axios.get(`${baseURL}/api/capabilities`)
 
         return response.data
     } catch(e)
