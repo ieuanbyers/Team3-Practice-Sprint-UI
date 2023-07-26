@@ -1,6 +1,6 @@
 var chai = require('chai');
 const capabilityRequestValidator = require('../../../validator/capabilityRequestValidator');
-const expect = chai.expect;
+const expecting = chai.expect;
 describe('capabilityRequestValidator', function () {
     describe('validateCapabilityRequest', function () {
         it('should return null when no errors', () => {
@@ -9,7 +9,7 @@ describe('capabilityRequestValidator', function () {
                 description: "Mocha",
             }
 
-            expect(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.be.null
+            expecting(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.be.null
         })
 
         it('should return error when name is more than 50 characters', () => {
@@ -18,7 +18,7 @@ describe('capabilityRequestValidator', function () {
                 description: "Mocha",
             }
 
-            expect(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Name greater than 50 characters")
+            expecting(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Name greater than 50 characters")
         })
 
         it('should return error when description is more than 100 characters', () => {
@@ -27,7 +27,7 @@ describe('capabilityRequestValidator', function () {
                 description: "MochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMocha",
             }
 
-            expect(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Description greater thn 100 characters")
+            expecting(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Description greater thn 100 characters")
         })
 
         it('should return error when name is empty', () => {
@@ -36,7 +36,7 @@ describe('capabilityRequestValidator', function () {
                 description: "Mocha",
             }
 
-            expect(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Name cannot be enpty")
+            expecting(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Name cannot be enpty")
         })
 
         it('should return error when name is empty', () => {
@@ -45,7 +45,7 @@ describe('capabilityRequestValidator', function () {
                 description: "",
             }
 
-            expect(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Description cannot be empty")
+            expecting(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Description cannot be empty")
         })
     })
 })
