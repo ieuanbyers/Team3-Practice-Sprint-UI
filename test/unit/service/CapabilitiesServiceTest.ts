@@ -9,7 +9,7 @@ const capabilityService= require ('../../../service/CapabilityService')
 const capability: Capability = {
   capabilityId: 1,
     name: "Applied Innovation",
-    description: "You don't have access"
+    description: "You dont have access"
 }
 
 describe('CapabilityService', function () {
@@ -24,7 +24,7 @@ describe('CapabilityService', function () {
 
         let results = await capabilityService.getCapabilities();
 
-        expect(results[0]).to.deep.equal(data[0]);
+        expect(results).to.deep.equal(data[0]);
     })
 
     it('should throw exception when 500 error returned from axios', async () => {
