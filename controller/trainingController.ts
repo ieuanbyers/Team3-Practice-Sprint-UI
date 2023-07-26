@@ -1,7 +1,7 @@
 import { type Application, type Request, type Response } from 'express'
 import { type Training } from '../model/Training'
 
-const trainingService = require('../service/TrainingService')
+const trainingService = require('../service/trainingService')
 
 module.exports = function (app: Application) {
   app.get('/view-training/:id', async (req: Request, res: Response) => {
