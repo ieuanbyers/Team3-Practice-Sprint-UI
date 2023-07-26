@@ -5,7 +5,7 @@ const MockAdapter = require('axios-mock-adapter');
 const chai = require('chai');
 const expect = chai.expect;
 const trainingService = require('../../../service/trainingService');
-const training = {
+const training: Training = {
     name: 'Test Course',
     link: 'http://localhost:3000',
     category: 'Test Category',
