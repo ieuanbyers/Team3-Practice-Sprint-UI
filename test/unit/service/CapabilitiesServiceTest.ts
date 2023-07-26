@@ -1,17 +1,15 @@
 import { Capability } from "../../../model/Capability";
+import axios from "axios"
+import MockAdapter from "axios-mock-adapter"
 
-
-var axios = require('axios');
-var MockAdapter = require('axios-mock-adapter');
 var chai = require('chai');  
 const expect = chai.expect;
-const capabilityService= require ('../../../Service/CapabilityService')
+const capabilityService= require ('../../../service/CapabilityService')
 
 const capability: Capability = {
-
   capabilityId: 1,
     name: "Applied Innovation",
-    description: "You don't have access"
+    description: "You dont have access"
 }
 
 describe('CapabilityService', function () {
@@ -20,13 +18,13 @@ describe('CapabilityService', function () {
 
       let mock = new MockAdapter(axios);
 
-            const data = [capability];
+        const data = [capability];
 
-            mock.onGet(capabilityService.URL).reply(200, data);
+        mock.onGet(capabilityService.URL).reply(200, data);
 
-            let results = await capabilityService.getCapabilities();
+        let results = await capabilityService.getCapabilities();
 
-            expect(results[0]).to.deep.equal(capability);
+        expect(results).to.deep.equal(data[0]);
     })
 
     it('should throw exception when 500 error returned from axios', async () => {
