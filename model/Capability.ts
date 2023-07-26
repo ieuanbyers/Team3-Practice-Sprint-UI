@@ -1,6 +1,6 @@
 export interface Capability
 {
-    capabilityId?: number
-    name?: string
-    description?: string
+    capabilityId: number
+    name: string
+    description: string
 }
