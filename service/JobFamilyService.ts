@@ -1,13 +1,12 @@
-import { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import { JobFamily } from "../model/JobFamily";
-
-const axios = require('axios');
 
 module.exports.getJobFamilies = async function(): Promise<JobFamily[]>
 {
     try
     {
-        const response:AxiosResponse = await axios.get('http://localhost:8080/api/job-family')
+        const baseURL = process.env.baseURL
+        const response:AxiosResponse = await axios.get(`${baseURL}/api/job-family`)
 
         return response.data
     } catch(e)

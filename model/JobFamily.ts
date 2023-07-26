@@ -1,4 +1,4 @@
-export class JobFamily
+export interface JobFamily
 {
     jobFamilyId?: number
     capabilityName?: string
