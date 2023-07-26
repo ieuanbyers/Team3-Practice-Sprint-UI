@@ -1,10 +1,9 @@
-import { Request,Response } from "express-serve-static-core";
-import session = require("express-session");
-const express = require('express');
-const path = require('path');
-const nunjucks = require('nunjucks');
+import express, { Request, Response} from "express";
+import session from "express-session";
+import path from "path";
+import nunjucks from "nunjucks";
 
-const app = express();
+export const app = express();
 
 const appViews = path.join(__dirname,'/views/');
 
@@ -15,7 +14,6 @@ const nunjucksConfig = {
 };
 
 nunjucks.configure(appViews,nunjucksConfig);
-
 
 app.set('view engine','html');
 

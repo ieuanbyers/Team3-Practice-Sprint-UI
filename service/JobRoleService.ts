@@ -1,19 +1,15 @@
-import { JobRole } from "../model/JobRole";
+import axios, {AxiosResponse} from "axios";
+import {FailedToGetJobsError} from "../Errors/FailedToGetJobsError";
 
-const axios = require('axios');
-
-module.exports.getJobRoles = async function(): Promise<JobRole[]>
+module.exports.getJobRoles = async function()
 {
     try
     {
-        const response = await axios.get('http://localhost:8080/api/job-roles')
-
-        return response.data
+        const baseURL = process.env.baseURL
+        const res:AxiosResponse = await axios.get(`${baseURL}/api/job-roles`)
+        return res.data;
     } catch(e)
     {
-        throw new Error('Could not get orders')
+        throw new FailedToGetJobsError('Could not get job roles')
     }
 }
-
-
-
