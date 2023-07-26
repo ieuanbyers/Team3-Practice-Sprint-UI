@@ -22,7 +22,7 @@ describe('TrainingService', function  () {
 
             let results = await trainingService.getTrainingByBand(bandId);
 
-            expect(results[0]).to.deep.equal(training);
+            expect(results).to.deep.equal(data[0]);
         });
 
         it('should throw exception when 500 error returned from axios', async () => {
