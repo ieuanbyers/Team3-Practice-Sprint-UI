@@ -1,5 +1,5 @@
 import { type Application, type Request, type Response } from 'express'
-import { type Training } from '../model/Training'
+import { type Training } from '../model/training'
 
 const trainingService = require('../service/trainingService')
 
