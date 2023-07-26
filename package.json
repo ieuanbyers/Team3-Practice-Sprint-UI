@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "hotReloadDev": "npx nodemon ./app.ts",
-    "start": "node dist/app.js",
-    "build": "npx tsc && cp -R views dist",
+    "start": "npx tsc && cp -R views dist && node dist/app.js",
     "test": "mocha Test/Unit/**/*.ts --require ts-node/register --exit"
   },
   "author": "",
