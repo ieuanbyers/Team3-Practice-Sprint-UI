@@ -6,6 +6,10 @@ const CapabilityService = require('../service/CapabilityService')
 
 module.exports = function(app: Application) {
 
+    app.get('/success', async (req: Request, res: Response) => {
+        res.render('success')
+    })
+
     app.get('/add-capability', async (req: Request, res: Response) => {
         res.render('add-capability')
     })
@@ -17,7 +21,7 @@ module.exports = function(app: Application) {
         try {
             id = await CapabilityService.createCapability(data)
 
-            res.redirect('/index')
+            res.redirect('success')
         } catch (e) {
             console.error(e);
 

@@ -11,7 +11,7 @@ module.exports.validateCapabilityRequest = function (capabilityRequest: Capabili
     }
 
     if (capabilityRequest.description.length < 1) {
-        return "Description empty";
+        return "Description cannot be empty";
     }
 
     if (capabilityRequest.description.length > 100) {
