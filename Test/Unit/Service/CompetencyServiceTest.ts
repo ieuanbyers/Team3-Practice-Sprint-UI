@@ -6,7 +6,7 @@ const chai = require('chai');
 const expect = chai.expect;
 const competencyService = require('../../../service/competencyService');
 const { Console } = require('console');
-const comp = {
+const comp: CompetencyRequest = {
     competencyName: "Test",
     description: "Testing",
     bandName: "You guessed it, testing",

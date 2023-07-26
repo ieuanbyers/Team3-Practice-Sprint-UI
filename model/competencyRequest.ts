@@ -1,5 +1,5 @@
 export interface CompetencyRequest  {
-    cometencyName?: string
+    competencyName?: string
     description?: string
     bandName?: string
 }
