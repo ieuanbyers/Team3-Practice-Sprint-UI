@@ -26,7 +26,7 @@ app.use(express.json())
 
 app.use(express.urlencoded({extended: true}));
 
-app.use(session({secret: 'NOT HARDODED SECRET', cookie: {maxAge: 60000}}));
+app.use(session({secret: 'NOT HARDCODED SECRET', cookie: {maxAge: 60000}}));
 declare module "express-session"
 {
     interface SessionData{
