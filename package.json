@@ -7,7 +7,7 @@
     "hotReloadDev": "npx nodemon ./app.ts",
     "start": "npx tsc && cp -R views dist && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test_ui": "mocha timeout-- 10000 test/*.js"
+    "test_ui": "mocha --timeout 10000 test/*.js"
   },
   "author": "",
   "license": "ISC",
