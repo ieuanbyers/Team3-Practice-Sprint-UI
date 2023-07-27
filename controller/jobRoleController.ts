@@ -1,5 +1,5 @@
 import { Application, Request, Response } from "express";
-import { JobRole } from "../model/JobRole";
+import { JobRoleResponse } from "../model/JobRoleResponse";
 
 const jobRoleService = require('../service/JobRoleService')
 
@@ -7,7 +7,7 @@ module.exports = function(app: Application)
 {
     app.get('/job-roles', async(req: Request, res: Response) =>
     {
-        let jobRoles: JobRole[];
+        let jobRoles: JobRoleResponse[];
         try
         {
             jobRoles = await jobRoleService.getJobRoles()
