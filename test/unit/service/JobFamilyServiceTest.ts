@@ -24,7 +24,7 @@ describe('JobFamilyService', function () {
 
         let results = await jobFamilyService.getJobFamilies();
 
-        expect(results).to.deep.equal(data[0]);
+        expect(results[0]).to.deep.equal(jobFamily);
     })
 
     it('should throw exception when 500 error returned from axios', async () => {

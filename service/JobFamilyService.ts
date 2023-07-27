@@ -1,5 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { JobFamily } from "../model/JobFamily";
+import { FailedToGetJobsError } from "../Errors/FailedToGetJobsError";
+import { FailedToGetJobFamiliesError } from "../Errors/FailedToGetJobFamilies";
 
 module.exports.getJobFamilies = async function(): Promise<JobFamily[]>
 {
@@ -11,7 +13,7 @@ module.exports.getJobFamilies = async function(): Promise<JobFamily[]>
         return response.data
     } catch(e)
     {
-        throw new Error('Could not get job families')
+        throw new FailedToGetJobFamiliesError('Could not get job families')
     }
 }
 
