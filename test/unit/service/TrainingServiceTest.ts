@@ -1,4 +1,4 @@
-import { type Training } from '../../../model/Training'
+import { type Training } from '../../../model/training'
 
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');

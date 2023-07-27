@@ -1,11 +1,11 @@
-import { type Training } from '../model/Training'
+import { type Training } from '../model/training'
 
 const axios = require('axios')
 axios.defaults.baseURL = process.env.API_URL;
 
 module.exports.URL = '/api/training/';
 
-module.exports.getTrainingByBand = async function (bandId: number): Promise<Training[]> {
+module.exports.gettrainingByBand = async function (bandId: number): Promise<Training[]> {
   if(!bandId){
     throw new Error('BandID does not exist');
   }
