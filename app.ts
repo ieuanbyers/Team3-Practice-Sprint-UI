@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 const session = require('express-session');
-
 const express = require('express');
 const path = require('path');
 const nunjucks = require('nunjucks');
@@ -48,4 +47,7 @@ app.get('/', async (req: Request, res: Response)=>
         title: 'Hack Street Boys',
     });
 });
+
+require('./controller/jobRoleController')(app);
+require('./controller/CapabilityController')(app);
 require('./controller/trainingController')(app);
