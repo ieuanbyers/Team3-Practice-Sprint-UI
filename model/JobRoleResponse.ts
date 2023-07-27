@@ -1,4 +1,4 @@
-export interface JobRole
+export interface JobRoleResponse
 {
     roleId?: number
     jobTitle?: string

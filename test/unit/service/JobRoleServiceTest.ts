@@ -1,11 +1,11 @@
-import {JobRole} from "../../../model/JobRoleResponse";
+import {JobRoleResponse} from "../../../model/JobRoleResponse";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 var chai = require('chai');
 const expect = chai.expect;
 const jobRoleService = require('../../../service/JobRoleService');
 
-const testData: JobRole = {
+const testData: JobRoleResponse = {
     roleId: 1,
     jobTitle: "Software Engineer",
     jobRoleFamilyId: 1
