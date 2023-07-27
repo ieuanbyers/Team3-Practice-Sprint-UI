@@ -1,5 +1,5 @@
 import { Request,Response } from "express-serve-static-core";
-import session from "express-session";
+const session = require('express-session');
 const express = require('express');
 const path = require('path');
 const nunjucks = require('nunjucks');

@@ -11,8 +11,8 @@ describe('viewJobRolesTest', async () => {
 
         await driver.get(process.env.UI_TEST_URL);
 
-        await driver.findElement(webdriver.By.id('job-roles')).getText().then(function(value) {
-            chai.assert.equal(value, 'Jobs')
+        await driver.findElement(webdriver.By.xpath('//*[@id="job-roles"]/h2')).getText().then(function(value) {
+            chai.assert.equal(value, 'Job Roles')
         });
 
         await driver.quit();
