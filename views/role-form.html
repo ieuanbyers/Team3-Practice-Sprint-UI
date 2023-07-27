@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Add Role</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mt-4">
+        <section id="form" class="bg-light py-5">
+            <div class="container">
+                <p>Enter Role details</p>
+                {% if errormessage %}
+                <div class="alert alert-danger" role="alert">
+                    {{ errormessage }}
+                </div>
+                {% endif %}
+                <form action="/new-job-role" method="post">
+                    <div class="form-group">
+                        <label for="Title">Title:</label>
+                        <input type="text" id="roletitle" name="roletitle" class="form-control" value="{{ roleTitle }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-family">Job Family:</label>
+                        <select class="form-select" name="job-family" id="job-family">
+                            <option selected value="">Please choose a job family</option>
+                            {% for jobfamily in jobfamilies %}
+                            <option value="{{ jobfamily.jobFamilyId }}">{{ jobfamily.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="band">Band:</label>
+                        <select class="form-select" name="band" id="band">
+                            <option selected value="">Please choose a band</option>
+                            {% for band in bands %}
+                            <option value="{{ band.bandId }}">{{ band.bandName }}</option>
+                            {% endfor %}
+                        </select>
+                    <p><button type="submit" class="btn btn-primary">Submit</button></p>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
