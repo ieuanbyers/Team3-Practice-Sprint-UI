@@ -1,11 +1,11 @@
-import {JobRole} from "../../../model/JobRole";
+import {JobRoleResponse} from "../../../model/JobRoleResponse";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 var chai = require('chai');
 const expect = chai.expect;
 const jobRoleService = require('../../../service/JobRoleService');
 
-const testData: JobRole = {
+const testData: JobRoleResponse = {
     roleId: 1,
     jobTitle: "Software Engineer",
     jobRoleFamilyId: 1
@@ -21,7 +21,7 @@ describe('JobRoleService', function () {
 
             let results = await jobRoleService.getJobRoles();
 
-            expect(results).to.deep.equal(data[0]);
+            expect(results[0]).to.deep.equal(testData);
         })
 
         it('should throw exception when 500 error returned from axios', async () => {
