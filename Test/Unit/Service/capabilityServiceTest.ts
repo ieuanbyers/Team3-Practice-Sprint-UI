@@ -18,9 +18,9 @@ describe('capabilityService', function () {
             mock.onPost(capabilityService.URL).reply(201, id);
 
             var result = await capabilityService.createCapability(capabilityRequest);
-            console.log(result[0])
+            console.log(result)
 
-            expects(result[0]).to.equal(id);
+            expects(result).to.equal(id);
         })
 
         it('should return a 500 error after failing to create an employee', async () => {

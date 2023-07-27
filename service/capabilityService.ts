@@ -1,6 +1,9 @@
 import { CapabilityRequest } from "../model/capabilityRequest"
 const CapabilityRequestValidator = require('../validator/capabilityRequestValidator')
-import axios, { AxiosResponse } from "axios";
+const axios = require('axios');
+axios.defaults.baseURL = process.env.API_URL;
+module.exports.URL = '/api/capabilities/'
+
 
 module.exports.createCapability = async function (capabilityRequest: CapabilityRequest): Promise<number> {
 
@@ -12,13 +15,9 @@ module.exports.createCapability = async function (capabilityRequest: CapabilityR
         }
     
     try {
-        const baseURL: string = process.env.baseURL;
-        const res:AxiosResponse = await axios.get(`${baseURL}/api/competencies`)
-        console.log(`${baseURL}/api/competencies`)
-        return res.data;
-        // const response = await axios.post('http://localhost:8080/api/capabilities/', capabilityRequest)
+        const response = await axios.post('http://localhost:8080/api/capabilities/', capabilityRequest)
 
-        // return response.data
+        return response.data
     } catch (e) {
         throw new Error('Could not create capability')
     }
