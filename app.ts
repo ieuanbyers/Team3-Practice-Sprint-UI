@@ -1,11 +1,9 @@
-import { Request, Response } from "express";
+import express, { Request, Response} from "express";
 import { CapabilityRequest } from "./model/capabilityRequest";
-
-const express = require('express');
 export const app = express();
-const path = require('path');
-const nunjucks = require('nunjucks');
-const session = require('express-session')
+import path from "path";
+import nunjucks from "nunjucks";
+import session from "express-session";
 
 
 //Config Nunjucks

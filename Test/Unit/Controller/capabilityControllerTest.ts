@@ -1,7 +1,6 @@
 import supertest from "supertest";
 import { app } from "../../../app";
-import { SinonStub} from "sinon";
-const sinon = require('sinon');
+import sinon, {  SinonStub } from "sinon";
 
 const capabilityService = require('../../../service/capabilityService');
 

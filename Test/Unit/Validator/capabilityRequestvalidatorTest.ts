@@ -14,7 +14,7 @@ describe('capabilityRequestValidator', function () {
 
         it('should return error when name is more than 50 characters', () => {
             let capabilityRequest = {
-                name: "ChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChaiChai",
+                name: "chai".repeat(50),
                 description: "Mocha",
             }
 
@@ -24,7 +24,7 @@ describe('capabilityRequestValidator', function () {
         it('should return error when description is more than 100 characters', () => {
             let capabilityRequest = {
                 name: "Chai",
-                description: "MochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMochaMocha",
+                description: "Mocha".repeat(100),
             }
 
             expecting(capabilityRequestValidator.validateCapabilityRequest(capabilityRequest)).to.equal("Description greater thn 100 characters")

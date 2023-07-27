@@ -1,5 +1,5 @@
-var axios = require('axios');
-var MockAdapter = require('axios-mock-adapter');
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 var chai = require('chai');
 const expects = chai.expect;
 const capabilityService = require('../../../service/capabilityService');
@@ -18,8 +18,9 @@ describe('capabilityService', function () {
             mock.onPost(capabilityService.URL).reply(201, id);
 
             var result = await capabilityService.createCapability(capabilityRequest);
+            console.log(result[0])
 
-            expects(result).to.equal(id);
+            expects(result[0]).to.equal(id);
         })
 
         it('should return a 500 error after failing to create an employee', async () => {
