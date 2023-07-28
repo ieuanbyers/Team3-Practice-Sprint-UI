@@ -1,5 +1,6 @@
 import { Application, Request, Response } from "express";
 import { Capability } from "../model/Capability";
+import { CapabilityRequest } from "../model/capabilityRequest";
 
 const capabilityService = require('../service/CapabilityService')
 
@@ -19,7 +20,7 @@ module.exports = function(app: Application)
         let id: Number
 
         try {
-            id = await CapabilityService.createCapability(data)
+            id = await capabilityService.createCapability(data)
 
             res.redirect('success')
         } catch (e) {
