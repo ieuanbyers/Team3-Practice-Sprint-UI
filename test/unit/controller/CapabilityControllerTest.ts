@@ -27,7 +27,7 @@ describe('CapabilityController', function () {
     })
 })
 
-describe('competecnyController', function () {
+describe('capabilityController', function () {
     let serviceStub: SinonStub;
 
     before(() => {
