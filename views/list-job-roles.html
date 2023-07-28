@@ -17,20 +17,26 @@
         </header>
         <main class="container mt-4">
             <section id="rolebandlevels" class="mt-4">
-                <h2>All roles' band levels</h2>
-                {% if roleBands and roleBands.length > 0 %}
+                <h2>All roles</h2>
+                {% if jobroles and jobroles.length > 0 %}
                 <table class="table">
                     <thead>
                         <tr>
+                            <th scope="col">Role ID</th>
                             <th scope="col">Role Title</th>
                             <th scope="col">Band Level</th>
+                            <th scope="col">Job Family</th>
+                            <th scope="col">Capability</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {% for role in roleBands %}
+                    {% for role in jobroles %}
                         <tr>
+                            <td>{{ role.role_id }}</td>
                             <td>{{ role.roleTitle }}</td>
                             <td>{{ role.bandName }}</td>
+                            <td>{{ role.jobFamilyName }}</td>
+                            <td>{{ role.capabilityName }}</td>
                         </tr>
                     {% endfor %}
                     </tbody>
