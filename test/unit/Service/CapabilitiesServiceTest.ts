@@ -20,7 +20,7 @@ describe('CapabilityService', function () {
 
       const data = [capability];
 
-      mock.onGet(capabilityService.URL).reply(200, data);
+      mock.onGet(capabilityService.URL).reply(201, data);
 
       let results = await capabilityService.getCapabilities();
 
