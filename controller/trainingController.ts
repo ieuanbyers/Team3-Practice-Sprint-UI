@@ -8,7 +8,7 @@ module.exports = function (app: Application) {
     let data: Training[] = [];
 
     try {
-      data = await trainingService.gettrainingByBand(req.params.id)
+      data = await trainingService.getTrainingByBand(req.params.id)
     } catch (e) {
       console.error(e)
     }

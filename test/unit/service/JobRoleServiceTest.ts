@@ -12,29 +12,29 @@ const testData: JobRoleResponse = {
 }
 
 describe('JobRoleService', function () {
-        it('should return job roles info from response', async () => {
-            let mock = new MockAdapter(axios);
+    it('should return job roles info from response', async () => {
+        let mock = new MockAdapter(axios);
 
-            const data = [testData];
+        const data = [testData];
 
-            mock.onGet(jobRoleService.URL).reply(200, data);
+        mock.onGet(jobRoleService.URL).reply(200, data);
 
-            let results = await jobRoleService.getJobRoles();
+        let results = await jobRoleService.getJobRoles();
 
-            expect(results[0]).to.deep.equal(testData);
-        })
+        expect(results[0]).to.deep.equal(testData);
+    })
 
-        it('should throw exception when 500 error returned from axios', async () => {
-            let mock = new MockAdapter(axios);
+    it('should throw exception when 500 error returned from axios', async () => {
+        let mock = new MockAdapter(axios);
 
-            mock.onGet(jobRoleService.URL).reply(500);
+        mock.onGet(jobRoleService.URL).reply(500);
 
-            try
-            {
-                await jobRoleService.getJobRoles();
-            } catch (e)
-            {
-                expect(e.message).to.equal('Could not get job roles')
-            }
-        })
+        try
+        {
+            await jobRoleService.getJobRoles();
+        } catch (e)
+        {
+            expect(e.message).to.equal('Could not get job roles')
+        }
+    })
 })

@@ -34,7 +34,7 @@ describe('TrainingService', function  () {
             try{
                 let result = await trainingService.getTrainingByBand(bandId);
             } catch(e){
-                expect(e.message).to.equal('Could not get training courses');
+                expect(e.message).to.equal('Could not get training');
             }
         });
     
@@ -45,7 +45,7 @@ describe('TrainingService', function  () {
             try{
                 let result = await trainingService.getTrainingByBand(bandId);
             } catch(e){
-                expect(e.message).to.equal('BandID does not exist');
+                expect(e.message).to.equal('Band ID does not exist');
             }
         });
     });
