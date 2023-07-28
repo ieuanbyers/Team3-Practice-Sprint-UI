@@ -22,7 +22,6 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Role ID</th>
                             <th scope="col">Role Title</th>
                             <th scope="col">Band Level</th>
                             <th scope="col">Job Family</th>
@@ -32,7 +31,6 @@
                     <tbody>
                     {% for role in jobroles %}
                         <tr>
-                            <td>{{ role.role_id }}</td>
                             <td>{{ role.roleTitle }}</td>
                             <td>{{ role.bandName }}</td>
                             <td>{{ role.jobFamilyName }}</td>
