@@ -1,8 +1,6 @@
 import { Application, Request, Response } from "express";
 import { JobRoleResponse } from "../model/JobRoleResponse";
 
-
-
 const jobRoleService = require('../service/JobRoleService')
 
 module.exports = function(app: Application)
