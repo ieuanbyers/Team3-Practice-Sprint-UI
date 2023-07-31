@@ -29,7 +29,7 @@ describe('JobRoleService', function () {
 
             mock.onPost(jobRoleService.URL).reply(201, id);
 
-            var result = await jobRoleService.createJobRole(createTestData);
+            var result = await jobRoleService.createJobRole(postTestData);
             console.log(result)
 
             expect(result).to.equal(id);
@@ -41,7 +41,7 @@ describe('JobRoleService', function () {
             mock.onPost(jobRoleService.URL).reply(500);
 
             try{
-                let result = await jobRoleService.createJobRole(testData);
+                let result = await jobRoleService.createJobRole(postTestData);
             } catch(e){
                 expect(e.message).to.equal('Could not create role');
             }
@@ -53,7 +53,7 @@ describe('JobRoleService', function () {
             mock.onPost(jobRoleService.URL).reply(400);
 
             try{
-                let result = await jobRoleService.createJobRole(testData);
+                let result = await jobRoleService.createJobRole(postTestData);
             } catch(e){
                 expect(e.message).to.equal('Could not create role');
             }
@@ -71,7 +71,7 @@ describe('JobRoleService', function () {
 
             let results = await jobRoleService.getJobRoles();
 
-            expect(results[0]).to.deep.equal(testData);
+            expect(results[0]).to.deep.equal(getTestData);
         })
     
     it('should throw exception when 500 error returned from axios', async () => {
