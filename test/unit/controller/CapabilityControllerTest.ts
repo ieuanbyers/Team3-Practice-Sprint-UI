@@ -2,7 +2,7 @@ import supertest from "supertest";
 import {app} from "../../../app";
 import sinon, { SinonStub } from "sinon";
 
-const capabilityService = require('../../../service/CapabilityService');
+const capabilityService = require('../../../service/capabilityService');
 
 describe('capabilityController', function () {
     let serviceStub: SinonStub;
