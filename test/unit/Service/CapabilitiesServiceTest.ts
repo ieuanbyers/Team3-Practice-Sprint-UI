@@ -4,7 +4,7 @@ import MockAdapter from "axios-mock-adapter"
 
 var chai = require('chai');  
 const expect = chai.expect;
-const capabilityService = require ('../../../service/CapabilityService')
+const capabilityService = require ('../../../service/capabilityService')
 
 const capability: Capability = {
   capabilityId: 1,
@@ -20,7 +20,7 @@ describe('CapabilityService', function () {
 
       const data = [capability];
 
-      mock.onGet(capabilityService.URL).reply(200, data);
+      mock.onGet(capabilityService.URL).reply(201, data);
 
       let results = await capabilityService.getCapabilities();
 
