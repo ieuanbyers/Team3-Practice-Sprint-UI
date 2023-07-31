@@ -4,7 +4,7 @@ import sinon, { SinonStub } from "sinon";
 
 const capabilityService = require('../../../service/CapabilityService');
 
-describe('CapabilityController', function () {
+describe('capabilityController', function () {
     let serviceStub: SinonStub;
 
     before(() => {
