@@ -23,6 +23,6 @@ module.exports.login = async function (login: Login): Promise<void> {
 
         return response.data
     } catch (e) {
-        throw new Error('could not login')
+        throw new FailedToLogin("could not login");
     }
 }
