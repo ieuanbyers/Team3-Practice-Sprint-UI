@@ -8,8 +8,8 @@ module.exports.URL = '/api/bands/';
 
 module.exports.getBandById = async function (bandId: number): Promise<Band> {
     try {
-        const endpointURL = axios.defaults.baseURL + module.exports.URL;
-        const response: AxiosResponse = await axios.get(endpointURL + bandId);
+        const endpointURL = axios.defaults.baseURL + module.exports.URL + bandId;
+        const response: AxiosResponse = await axios.get(endpointURL);
     
         return response.data;
     } catch (e) {
