@@ -12,8 +12,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        {% if bandLevel %}
-                        <h1>Training Courses for {{bandLevel.name}}s</h1>
+                        {% if bandLevel.name %}
+                        <h1>{{bandLevel.name}} Training Courses</h1>
                         {% else %}
                         <h1>Training Courses</h1>
                         {% endif %}
@@ -48,5 +48,5 @@
             </section>
         </main>
     </body>
-    <script type="text/javascript" src="../public/view-training.js"></script>
+    <script type="text/javascript" src="../public/scripts/view-training.js"></script>
 </html>
