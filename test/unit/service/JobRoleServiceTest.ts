@@ -65,7 +65,7 @@ describe('JobRoleService', function () {
    it('should return job roles info from response', async () => {
             let mock = new MockAdapter(axios);
 
-            const data = [testData];
+            const data = [getTestData];
 
             mock.onGet(jobRoleService.URL).reply(200, data);
 

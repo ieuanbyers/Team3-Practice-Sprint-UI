@@ -1,5 +1,4 @@
 import { Application, Request, Response } from "express";
-import { JobRole } from "../model/JobRole";
 import { Band } from "../model/Band";
 import { JobFamily } from "../model/JobFamily";
 import { JobRoleRequest } from "../model/JobRoleRequest";
