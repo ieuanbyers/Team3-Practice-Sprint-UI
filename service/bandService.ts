@@ -1,5 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { type Band } from '../model/band'
+import { FailedToGetBandError } from '../Errors/failedToGetBandError';
 const axios = require('axios')
 
 axios.defaults.baseURL = process.env.API_URL;
@@ -12,7 +13,7 @@ module.exports.getBandById = async function (bandId: number): Promise<Band> {
     
         return response.data;
     } catch (e) {
-        throw new Error('Could not get band');
+        throw new FailedToGetBandError('Could not get band');
     }
 }
 
