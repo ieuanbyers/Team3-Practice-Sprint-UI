@@ -1,0 +1,7 @@
+{
+    "urls": [
+        "http://localhost:3000/job-roles",
+        "http://localhost:3000/capability",
+        "http://localhost:3000/view-training/2"
+    ]
+}

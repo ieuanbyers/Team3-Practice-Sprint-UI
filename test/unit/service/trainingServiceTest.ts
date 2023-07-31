@@ -11,14 +11,27 @@ const training: Training = {
     category: 'Test Category',
   };
 
+const endpointURL = 'http://localhost:3000' + trainingService.URL;
+
 describe('TrainingService', function  () {
+    let originalEnv: NodeJS.ProcessEnv;
+
+    before(() => {
+        originalEnv = process.env;
+        process.env.API_URL = 'http://localhost:3000';
+    });
+
+    after(() => {
+        process.env = originalEnv;
+    });
+
     describe('getTrainingByBand', function () {
         it('should return training courses from response', async () => {
             const mock = new MockAdapter(axios);
             const bandId: number = 1;
             let data: Training[] = [training];
 
-            mock.onGet(trainingService.URL + bandId).reply(200, data);
+            mock.onGet(endpointURL + bandId).reply(200, data);
 
             let results = await trainingService.getTrainingByBand(bandId);
 
@@ -29,12 +42,12 @@ describe('TrainingService', function  () {
             const mock = new MockAdapter(axios);
             const bandId: number = 1;
     
-            mock.onGet(trainingService.URL + bandId).reply(500);
+            mock.onGet(endpointURL + bandId).reply(500);
       
             try{
                 let result = await trainingService.getTrainingByBand(bandId);
             } catch(e){
-                expect(e.message).to.equal('Could not get training courses');
+                expect(e.message).to.equal('Could not get training');
             }
         });
     
@@ -45,7 +58,7 @@ describe('TrainingService', function  () {
             try{
                 let result = await trainingService.getTrainingByBand(bandId);
             } catch(e){
-                expect(e.message).to.equal('BandID does not exist');
+                expect(e.message).to.equal('Band ID does not exist');
             }
         });
     });
