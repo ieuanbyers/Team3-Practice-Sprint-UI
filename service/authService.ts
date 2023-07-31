@@ -1,6 +1,7 @@
 import {Login} from "../model/auth";
 import axios, {AxiosResponse} from "axios";
 import https from "https";
+import {FailedToLogin} from "../Errors/FailedToLogin";
 const loginValidator = require("../validator/loginValidator")
 
 module.exports.login = async function (login: Login): Promise<void> {
@@ -12,7 +13,7 @@ module.exports.login = async function (login: Login): Promise<void> {
 
     if(err)
     {
-        throw new Error(err);
+        throw new FailedToLogin(err);
     }
     try {
         const baseURL = process.env.baseURL
