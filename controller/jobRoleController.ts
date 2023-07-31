@@ -3,6 +3,7 @@ import { JobRole } from "../model/JobRole";
 import { Band } from "../model/Band";
 import { JobFamily } from "../model/JobFamily";
 import { JobRoleRequest } from "../model/JobRoleRequest";
+import { JobRoleResponse } from "../model/JobRoleResponse";
 
 const jobRoleService = require('../service/JobRoleService')
 const bandService = require('../service/BandService');
@@ -13,7 +14,7 @@ module.exports = function(app: Application)
 {
     app.get('/job-roles', async(req: Request, res: Response) =>
     {
-        let jobRoles: JobRole[];
+        let jobRoles: JobRoleResponse[];
         try
         {
             jobRoles = await jobRoleService.getJobRoles()
