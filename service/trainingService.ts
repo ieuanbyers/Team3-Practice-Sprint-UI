@@ -4,7 +4,6 @@ import { type Training } from '../model/training'
 import { getEnvConfig } from './configService';
 const axios = require('axios')
 
-
 module.exports.URL = '/api/training/';
 
 module.exports.getTrainingByBand = async function (bandId: number): Promise<Training[]> {
