@@ -2,7 +2,7 @@ import { Application, Request, Response } from "express";
 import { Capability } from "../model/Capability";
 import { CapabilityRequest } from "../model/capabilityRequest";
 
-const capabilityService = require('../service/CapabilityService')
+const capabilityService = require('../service/capabilityService')
 
 module.exports = function(app: Application)
 {
