@@ -2,6 +2,8 @@ import axios, {AxiosResponse} from "axios";
 import {FailedToGetJobsError} from "../Errors/FailedToGetJobsError";
 import { JobRoleRequest } from "../model/JobRoleRequest";
 
+const jobRoleValidator = require("../validator/JobRoleValidator");
+
 module.exports.getJobRoles = async function()
 {
     try
@@ -16,7 +18,18 @@ module.exports.getJobRoles = async function()
 }
 
 module.exports.createJobRole = async function(newrole: JobRoleRequest) {
-    const response = await axios.post(this.URL, newrole)
+    const error:string = jobRoleValidator.validateJobRole(newrole);
 
-    return response.data
+    if(error) {
+        throw new Error(error);
+    }
+
+    try {
+        const baseURL = process.env.baseURL
+        const res:AxiosResponse = await axios.post(`${baseURL}/api/job-roles`, newrole)
+        return res.data
+    } catch(e) {
+        throw new Error('Could not create role');
+    }
+    
 }

@@ -2,6 +2,7 @@ import { Application, Request, Response } from "express";
 import { JobRole } from "../model/JobRole";
 import { Band } from "../model/Band";
 import { JobFamily } from "../model/JobFamily";
+import { JobRoleRequest } from "../model/JobRoleRequest";
 
 const jobRoleService = require('../service/JobRoleService')
 const bandService = require('../service/BandService');
@@ -38,20 +39,14 @@ module.exports = function(app: Application)
     })
 
     app.post('/new-job-role', async (req, res) => {
-        let error = jobRoleValidator.validateJobRole(req.body)
-    
-        console.log(error)
-    
-        if (error) {
-            res.locals.errormessage = error
-            return res.render('role-form', req.body)
-        }
-    
+        let data: JobRoleRequest = req.body
         try {        
-            const id = await jobRoleService.createJobRole(req.body)
+            const id:Number = await jobRoleService.createJobRole(data)
+            res.redirect('/job-roles')
         } catch (e) {
-            res.locals.errormessage = "Failed to submit form"
-            res.render('role-form', req.body)
+            console.error(e);
+            res.locals.errormessage = e.message
+            res.render('add-capabilty', data)
         }
     });
 }

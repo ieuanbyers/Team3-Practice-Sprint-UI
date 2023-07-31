@@ -1,19 +1,27 @@
 import supertest from "supertest";
 import {app} from "../../../app";
-import sinon from "sinon";
+import sinon, { SinonStub } from "sinon";
 
 const jobRoleService = require('../../../service/JobRoleService');
 
 describe('JobRoleController', function () {
+    let stub: SinonStub;
+
+    before(() => { 
+        stub = sinon.stub(jobRoleService,"createJobRole").returns({
+            roleTitle: "Software Engineer",
+            jobFamilyId: 2,
+            bandId: 1
+        });
+    })
+
     it('check for 200 code', async ()=>
     {
-        const stub = sinon.stub(jobRoleService,"getJobRoles").returns({
-            roleId: 1,
-            jobTitle: "Software Engineer",
-            jobRoleFamilyId: 1
-        });
-
         const response= await supertest(app)
-            .get('/job-roles').set('Accept','application/json').expect(200);
+            .get('/new-job-role').set('Accept','application/json').expect(200);
+    })
+
+    after(() => {
+        stub.restore();
     })
 })
