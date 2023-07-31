@@ -1,7 +1,7 @@
 import { JobRoleRequest } from "../../../model/JobRoleRequest";
 
 var chai = require('chai');
-const jobRoleValidator = require('../../../validator/jobRoleValidator');
+const jobRoleValidator = require('../../../validator/JobRoleValidator');
 const expect = chai.expect;
 describe('JobRoleValidator', function () {
     describe('validateJobRole', function () {
