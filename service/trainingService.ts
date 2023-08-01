@@ -18,13 +18,3 @@ module.exports.getTrainingByBand = async function (bandId: number): Promise<Trai
     throw new FailedToGetTrainingError('Could not get training');
   }
 }
-
-module.exports.getTrainingCategories = async function (): Promise<string[]> {
-  try{
-    const response = await axios.get('http://localhost:8080/api/training-categories');
-
-    return response.data;
-  } catch(e){
-    throw new FailedToGetTrainingError('Could not get training categories');
-  }
-}
