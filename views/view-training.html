@@ -10,8 +10,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        {% if bandLevel %}
-                        <h1>Training Courses for {{bandLevel.name}}s</h1>
+                        {% if trainingCourses %}
+                        <h1>Training Courses for {{trainingCourses[0].bandName}}s</h1>
                         {% else %}
                         <h1>Training Courses</h1>
                         {% endif %}
