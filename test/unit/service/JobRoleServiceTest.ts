@@ -27,7 +27,7 @@ describe('JobRoleService', function () {
 
             const id = 1;
 
-            mock.onPost(jobRoleService.URL).reply(201, id);
+            mock.onPost(`${jobRoleService.URL}/api/job-roles`).reply(201, id);
 
             var result = await jobRoleService.createJobRole(postTestData);
             console.log(result)
@@ -67,7 +67,7 @@ describe('JobRoleService', function () {
 
             const data = [getTestData];
 
-            mock.onGet(jobRoleService.URL).reply(200, data);
+            mock.onGet(`${jobRoleService.URL}/api/job-roles`).reply(200, data);
 
             let results = await jobRoleService.getJobRoles();
 

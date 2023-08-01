@@ -4,11 +4,14 @@ import { JobRoleRequest } from "../model/JobRoleRequest";
 
 const jobRoleValidator = require("../validator/JobRoleValidator");
 
+const baseURL = process.env.baseURL
+module.exports.URL=baseURL;
+
 module.exports.getJobRoles = async function()
 {
     try
     {
-        const baseURL = process.env.baseURL
+        
         const res:AxiosResponse = await axios.get(`${baseURL}/api/job-roles`)
         return res.data;
     } catch(e)
@@ -17,7 +20,7 @@ module.exports.getJobRoles = async function()
     }
 }
 
-module.exports.createJobRole = async function(newrole: JobRoleRequest) {
+module.exports.createJobRole = async function(newrole: JobRoleRequest): Promise<number> {
     const error:string = jobRoleValidator.validateJobRole(newrole);
 
     if(error) {
@@ -25,7 +28,6 @@ module.exports.createJobRole = async function(newrole: JobRoleRequest) {
     }
 
     try {
-        const baseURL = process.env.baseURL
         const res:AxiosResponse = await axios.post(`${baseURL}/api/job-roles`, newrole)
         console.log(res.data);
         return res.data
