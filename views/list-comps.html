@@ -19,7 +19,7 @@
     <main class="container mt-4">
         <section id="orders" class="mt-4">
             <h2>Competencies</h2>
-            {% if competencyRequest and competencyRequest.length > 0 %} 
+            {% if competencies and competencies.length > 0 %} 
             <table class="table">
                 <thread>
                     <tr>
@@ -29,7 +29,7 @@
                     </tr>
                 </thread>
                 <tbody>
-                    {% for comp in competencyRequest %}
+                    {% for comp in competencies %}
                     <tr>
                         <td>{{ comp.competencyName }}</td>
                         <td>{{ comp.description }}</td>
