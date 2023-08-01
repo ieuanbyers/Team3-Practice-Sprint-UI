@@ -1,4 +1,4 @@
-import { Capability } from "../../../model/Capability";
+import { Capability } from "../../../model/capability";
 import axios from "axios"
 import MockAdapter from "axios-mock-adapter"
 
