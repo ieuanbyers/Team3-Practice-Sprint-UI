@@ -1,8 +1,6 @@
 export class FailedToGetJobFamiliesError extends Error {
     constructor(message: string) {
-        super();
+        super(message);
         this.message = message;
     }
-    message: string;
-    name: string;
 }
