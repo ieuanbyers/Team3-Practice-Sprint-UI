@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { Capability } from "../model/Capability";
+import { Capability } from "../model/capability";
 import { FailedToGetCapabilitiesError } from "../Errors/FailedToGetCapabilitiesError";
 
 
