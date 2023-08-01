@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches: [ main ]
-  pull-request:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
           baseURL: ${{ secrets.BASE_URL }}
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: employee_demo
-          IMAGE_TAG: team3-api
+          IMAGE_TAG: team3-web
         run: |
           docker build --build-arg baseURL=${baseURL} -t ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG} .
           docker push ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
