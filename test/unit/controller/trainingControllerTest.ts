@@ -3,11 +3,9 @@ import sinon, {SinonStub} from "sinon";
 import {app} from "../../../app";
 
 const trainingService = require('../../../service/trainingService');
-const bandService = require('../../../service/bandService');
 
 describe('TrainingController', function () {
     let trainingStub: SinonStub;
-    let bandStub: SinonStub;
 
     before(() => {
         trainingStub = sinon.stub(trainingService, "getTrainingByBand").returns({
