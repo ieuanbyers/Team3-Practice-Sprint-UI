@@ -1,6 +1,6 @@
-import { JobFamilyRequest } from "../model/jobFamilyRequest";
+import { JobFamilyResponseRequest } from "../model/jobFamilyResponseRequest";
 
-module.exports.validateJobFamilyRequest= function (JobFamilyRequest: JobFamilyRequest): string {
+module.exports.validateJobFamilyRequest= function (JobFamilyRequest: JobFamilyResponseRequest): string {
 
     if(JobFamilyRequest.name.length < 1) {
         return "Name cannot be empty";

@@ -1,11 +1,11 @@
 import axios, { AxiosResponse } from "axios";
-import { JobFamily } from "../model/JobFamily";
+import { JobFamilyRequest } from "../model/JobFamilyRequest";
 import { FailedToGetJobsError } from "../Errors/FailedToGetJobsError";
 import { FailedToGetJobFamiliesError } from "../Errors/FailedToGetJobFamilies";
-import { JobFamilyRequest } from "../model/jobFamilyRequest";
+import { JobFamilyResponseRequest } from "../model/jobFamilyResponseRequest";
 const jobFamilyRequestValidator = require("../validator/jobFamilyRequestValidator")
 
-module.exports.getJobFamilies = async function(): Promise<JobFamily[]>
+module.exports.getJobFamilies = async function(): Promise<JobFamilyRequest[]>
 {
     try
     {
@@ -19,8 +19,8 @@ module.exports.getJobFamilies = async function(): Promise<JobFamily[]>
     }
 }
 
-module.exports.createFamily = async function (JobFamilyRequest: JobFamilyRequest): Promise<number> {
-    const error: string = jobFamilyRequestValidator.validateJobFamilyRequest(JobFamilyRequest)
+module.exports.createFamily = async function (JobFamilyResponseRequest: JobFamilyResponseRequest): Promise<number> {
+    const error: string = jobFamilyRequestValidator.validateJobFamilyRequest(JobFamilyResponseRequest)
 
         if (error) {
             throw new Error(error)
@@ -28,13 +28,10 @@ module.exports.createFamily = async function (JobFamilyRequest: JobFamilyRequest
 
     try {
         const baseURL = process.env.baseURL
-        const response:AxiosResponse = await axios.post(`${baseURL}/api/job-family`, JobFamilyRequest)
+        const response:AxiosResponse = await axios.post(`${baseURL}/api/job-family`, JobFamilyResponseRequest)
 
         return response.data
     } catch (e) {
         throw new Error('Could not create Job Family')
     }
 }
-
-
-

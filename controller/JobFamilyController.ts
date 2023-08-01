@@ -1,6 +1,6 @@
 import { Application, Request, Response } from "express";
-import { JobFamily } from "../model/JobFamily";
-import { JobFamilyRequest } from "../model/jobFamilyRequest";
+import { JobFamilyRequest } from "../model/JobFamilyRequest";
+import { JobFamilyResponseRequest } from "../model/jobFamilyResponseRequest";
 
 const jobFamilyService = require('../service/JobFamilyService')
 
@@ -8,7 +8,7 @@ module.exports = function(app: Application)
 {
     app.get('/job-family', async(req: Request, res: Response) =>
     {
-        let data: JobFamily[];
+        let data: JobFamilyRequest[];
 
         try
         {
@@ -23,7 +23,7 @@ module.exports = function(app: Application)
 
     app.get('/new-job-family', async(req: Request, res: Response) =>
     {
-        let data: JobFamily[];
+        let data: JobFamilyRequest[];
 
         try
         {
@@ -37,7 +37,7 @@ module.exports = function(app: Application)
     })
 
     app.post('/new-job-family', async (req, res) => {
-        let data: JobFamilyRequest = req.body
+        let data: JobFamilyResponseRequest = req.body
         try {        
             const id:Number = await jobFamilyService.createFamily(data)
             res.redirect('/job-family')
