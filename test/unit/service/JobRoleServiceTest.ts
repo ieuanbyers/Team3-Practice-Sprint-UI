@@ -14,8 +14,10 @@ const postTestData: JobRoleRequest = {
 
 const getTestData: JobRoleResponse = {
     roleId: 1,
-    jobTitle: "Software Engineer",
-    jobRoleFamilyId: 1
+    roleTitle: "Software Engineer",
+    bandName: "Trainee",
+    jobFamilyName: "Engineering",
+    capabilityName: "Engineering"
 }
 
 describe('JobRoleService', function () {
