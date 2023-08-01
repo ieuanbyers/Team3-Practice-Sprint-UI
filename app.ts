@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CompetencyRequest } from "./model/competencyRequest";
+import { CompetencyResponse } from "./model/competencyResponse";
 
 const express = require('express');
 export const app = express();
@@ -33,7 +33,7 @@ app.use(session({ secret: 'NOT HARDCODED SECRET', cookie: { maxAge: 60000 }}));
 
 declare module "express-session" {
     interface SessionData {
-        compentancyRequest: CompetencyRequest;
+        compentancyRequest: CompetencyResponse;
     }
 }
 

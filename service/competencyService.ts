@@ -1,18 +1,18 @@
-import { CompetencyRequest } from "../model/competencyRequest";
+import { AxiosResponse } from "axios";
+import { CompetencyResponse } from "../model/competencyResponse";
+import { envConfig } from "../model/envConfig";
+import { getEnvConfig } from "./configService";
 const axios = require('axios');
-axios.defaults.baseURL = process.env.API_URL;
 
 module.exports.URL = '/api/competencies/';
 
-
-
-module.exports.getCompsWithBand = async function (bandId: number): Promise<CompetencyRequest[]> {
+module.exports.getCompsWithBand = async function (bandId: number): Promise<CompetencyResponse[]> {
     if(!bandId){
         throw new Error('BandID does not exist');
       }
     try {
-        const response = await axios.get('http://localhost:8080/api/competencies/' + bandId)
-
+        const endpointURL = getEnvConfig().api_url + this.URL;
+        const response: AxiosResponse = await axios.get(endpointURL + bandId);
         return response.data
     } catch (e) {
         throw new Error('Could not get competencies')

@@ -1,25 +1,39 @@
-import { CompetencyRequest } from "../../../model/competencyRequest";
+import { CompetencyResponse } from "../../../model/competencyResponse";
 
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
 const chai = require('chai');  
 const expect = chai.expect;
 const competencyService = require('../../../service/competencyService');
-const { Console } = require('console');
-const comp: CompetencyRequest = {
+const comp: CompetencyResponse = {
     competencyName: "Test",
     description: "Testing",
     bandName: "You guessed it, testing",
 }
+
+const endpointURL = 'http://localhost:3000' + competencyService.URL;
+
+
+describe('CompetencyService', function  () {
+  let originalEnv: NodeJS.ProcessEnv;
+
+  before(() => {
+      originalEnv = process.env;
+      process.env.API_URL = 'http://localhost:3000';
+  });
+
+  after(() => {
+      process.env = originalEnv;
+  });
 
 describe('competencyService', function () {
     describe('getCompsWithBand', function () {
       it('should return comps from response', async () => {
         var mock = new MockAdapter(axios);
         const bandId = 1;
-        let data: CompetencyRequest[] = [comp];
+        let data: CompetencyResponse[] = [comp];
 
-        mock.onGet(competencyService.URL + bandId).reply(200, data);
+        mock.onGet(endpointURL + bandId).reply(200, data);
 
         let results = await competencyService.getCompsWithBand(bandId);
 
@@ -31,7 +45,7 @@ describe('competencyService', function () {
       const mock = new MockAdapter(axios);
           const bandId: number = 1;
   
-          mock.onGet(competencyService.URL + bandId).reply(500);
+          mock.onGet(endpointURL + bandId).reply(500);
       
           try{
               let result = await competencyService.getCompsWithBand(bandId);
@@ -52,3 +66,4 @@ describe('competencyService', function () {
       })
     })
   })
+})
