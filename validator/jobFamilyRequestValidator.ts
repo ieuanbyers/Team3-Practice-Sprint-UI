@@ -1,4 +1,4 @@
-import { JobFamilyRequest } from "../model/JobFamilyRequest";
+import { JobFamilyRequest } from "../model/jobFamilyRequest";
 
 module.exports.validateJobFamilyRequest= function (JobFamilyRequest: JobFamilyRequest): string {
 

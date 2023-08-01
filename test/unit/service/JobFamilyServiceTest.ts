@@ -1,4 +1,4 @@
-import { JobFamily } from "../../../model/jobFamily";
+import { JobFamily } from "../../../model/JobFamily";
 import axios from "axios"
 import MockAdapter from "axios-mock-adapter"
 
