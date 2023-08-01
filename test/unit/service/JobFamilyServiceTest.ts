@@ -1,4 +1,4 @@
-import { JobFamily } from "../../../model/JobFamily";
+import { JobFamilyResponse } from "../../../model/JobFamilyResponse";
 import axios from "axios"
 import MockAdapter from "axios-mock-adapter"
 
@@ -6,7 +6,7 @@ var chai = require('chai');
 const expect = chai.expect;
 const jobFamilyService= require ('../../../service/JobFamilyService')
 
-const jobFamily: JobFamily = {
+const jobFamily: JobFamilyResponse = {
   jobFamilyId: 1,
   capabilityName: "Applied Innovation",
   name: "Engineering Strategy and Planning"

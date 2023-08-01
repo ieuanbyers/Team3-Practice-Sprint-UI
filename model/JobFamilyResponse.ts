@@ -1,4 +1,4 @@
-export interface JobFamily
+export interface JobFamilyResponse
 {
     jobFamilyId?: number
     capabilityName?: string

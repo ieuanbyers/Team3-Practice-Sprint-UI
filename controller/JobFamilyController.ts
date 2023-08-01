@@ -1,5 +1,5 @@
 import { Application, Request, Response } from "express";
-import { JobFamily } from "../model/JobFamily";
+import { JobFamilyResponse } from "../model/JobFamilyResponse";
 
 const jobFamilyService = require('../service/JobFamilyService')
 
@@ -7,7 +7,7 @@ module.exports = function(app: Application)
 {
     app.get('/job-family', async(req: Request, res: Response) =>
     {
-        let data: JobFamily[];
+        let data: JobFamilyResponse[];
 
         try
         {
