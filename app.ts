@@ -1,6 +1,4 @@
-import { Request, Response } from "express";
-import { CompetencyResponse } from "./model/competencyResponse";
-import express, { Request, Response} from "express";
+import express, { Request, Response } from "express";
 import session from "express-session";
 import path from "path";
 import nunjucks from "nunjucks";
