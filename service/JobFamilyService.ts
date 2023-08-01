@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { JobFamilyRequest } from "../model/JobFamilyRequest";
+import { JobFamilyRequest } from "../model/jobFamilyRequest";
 import { FailedToGetJobsError } from "../Errors/FailedToGetJobsError";
 import { FailedToGetJobFamiliesError } from "../Errors/FailedToGetJobFamilies";
 import { JobFamilyResponseRequest } from "../model/jobFamilyResponseRequest";

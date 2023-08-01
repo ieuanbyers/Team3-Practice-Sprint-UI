@@ -1,5 +1,5 @@
 import { Application, Request, Response } from "express";
-import { JobFamilyRequest } from "../model/JobFamilyRequest";
+import { JobFamilyRequest } from "../model/jobFamilyRequest";
 import { JobFamilyResponseRequest } from "../model/jobFamilyResponseRequest";
 
 const jobFamilyService = require('../service/JobFamilyService')
@@ -44,7 +44,7 @@ module.exports = function(app: Application)
         } catch (e) {
             console.error(e);
             res.locals.errormessage = e.message
-            res.render('list-job-families', data)
+            res.render('job-family-form', data)
         }
     });
 }
