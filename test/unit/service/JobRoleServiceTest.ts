@@ -7,7 +7,7 @@ const expect = chai.expect;
 const jobRoleService = require('../../../service/JobRoleService');
 
 const postTestData: JobRoleRequest = {
-    roleTitle: "Software Engineer",
+    roleTitle: "Test Engineer",
     jobFamilyId: 2,
     bandId: 1
 }
@@ -30,7 +30,6 @@ describe('JobRoleService', function () {
             mock.onPost(`${jobRoleService.URL}/api/job-roles`).reply(201, id);
 
             var result = await jobRoleService.createJobRole(postTestData);
-            console.log(result)
 
             expect(result).to.equal(id);
         })
