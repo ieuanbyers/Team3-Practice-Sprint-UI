@@ -1,6 +1,5 @@
 import { AxiosResponse } from "axios";
 import { CompetencyResponse } from "../model/competencyResponse";
-import { envConfig } from "../model/envConfig";
 import { getEnvConfig } from "./configService";
 const axios = require('axios');
 
