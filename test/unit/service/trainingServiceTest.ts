@@ -9,6 +9,7 @@ const training: Training = {
     name: 'Test Course',
     link: 'http://localhost:3000',
     category: 'Test Category',
+    bandName: 'Test Band'
   };
 
 const endpointURL = 'http://localhost:3000' + trainingService.URL;
