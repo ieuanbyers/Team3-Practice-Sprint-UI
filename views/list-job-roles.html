@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Job Roles</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<header class="bg-dark text-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <img src="../public/img/KainosLogo.png" alt="Kainos" width="300" height="100" style="float: right; vertical-align: middle; padding: .5em;">
-                <h1 style="padding-top: 1.5rem;">Job Roles</h1>
-            </div>
-        </div>
-    </div>
-</header>
+{% include "./includes/header.html" %}
 <main class="container mt-4">
     <section id="job-roles" class="mt-4">
         <h2>Job Roles</h2>
@@ -42,14 +25,4 @@
         {% endif %}
     </section>
 </main>
-<footer class="bg-dark text-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h5 style="padding-top: .5rem; text-align: right;">&copy Hackstreet Boys</h2>
-            </div>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
+{% include "./includes/footer.html" %}
