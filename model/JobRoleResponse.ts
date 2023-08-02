@@ -1,9 +1,8 @@
-export interface JobRoleResponse
-{
+export interface JobRoleResponse {
     roleId?: number
-    jobTitle?: string
-    capabilityName?: string
+    roleTitle?: string
     bandId?: number
     bandName?: string
-    jobRoleFamilyId?: number
+    jobFamilyName?: string
+    capabilityName?: string
 }

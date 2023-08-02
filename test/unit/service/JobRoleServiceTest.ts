@@ -7,8 +7,11 @@ const jobRoleService = require('../../../service/JobRoleService');
 
 const testData: JobRoleResponse = {
     roleId: 1,
-    jobTitle: "Software Engineer",
-    jobRoleFamilyId: 1
+    roleTitle: "Software Engineer",
+    bandId: 1,
+    bandName: "Trainee",
+    jobFamilyName: "Engineering",
+    capabilityName: "Engineering"
 }
 
 describe('JobRoleService', function () {
