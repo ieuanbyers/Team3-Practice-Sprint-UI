@@ -28,12 +28,8 @@ module.exports = function(app: Application)
         let Bands: Band[] = [];
         let jobFamilies: JobFamily[] = [];
 
-        try{
             Bands = await bandService.getAllBands();
             jobFamilies = await jobFamilyService.getJobFamilies();
-        } catch(e) {
-            console.error('Unable to populate dropdowns')
-        }
 
         res.render('role-form', {bands: Bands, jobfamilies: jobFamilies})
     })
