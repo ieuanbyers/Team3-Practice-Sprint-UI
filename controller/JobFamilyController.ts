@@ -1,14 +1,16 @@
 import { Application, Request, Response } from "express";
 import { JobFamilyRequest } from "../model/jobFamilyRequest";
-import { JobFamilyResponseRequest } from "../model/jobFamilyResponseRequest";
+import { JobFamilyResponse } from "../model/jobFamilyResponse";
+import { Capability } from "../model/Capability";
 
 const jobFamilyService = require('../service/JobFamilyService')
+const capabilityService = require('../service/CapabilityService')
 
 module.exports = function(app: Application)
 {
     app.get('/job-family', async(req: Request, res: Response) =>
     {
-        let data: JobFamilyRequest[];
+        let data: JobFamilyResponse[];
 
         try
         {
@@ -23,21 +25,21 @@ module.exports = function(app: Application)
 
     app.get('/new-job-family', async(req: Request, res: Response) =>
     {
-        let data: JobFamilyRequest[];
+        let data: Capability[];
 
         try
         {
-            data = await jobFamilyService.getJobFamilies()
+            data = await capabilityService.getCapabilities()
         } catch (e)
         {
             console.error('Unable to populate dropdown');
         }
         
-        res.render('job-family-form', {jobfamilies: data})
+        res.render('job-family-form', {capabilities: data})
     })
 
     app.post('/new-job-family', async (req, res) => {
-        let data: JobFamilyResponseRequest = req.body
+        let data: JobFamilyRequest = req.body
         try {        
             const id:Number = await jobFamilyService.createFamily(data)
             res.redirect('/job-family')

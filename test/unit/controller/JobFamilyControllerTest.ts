@@ -5,23 +5,36 @@ import sinon, { SinonStub } from "sinon";
 const jobFamilyService = require('../../../service/JobFamilyService');
 
 describe('JobFamilyController', function () {
-    let serviceStub: SinonStub;
+    let postStub: SinonStub;
+    let getStub: SinonStub;
 
-    before(() => {
-        serviceStub = sinon.stub(jobFamilyService, "getJobFamilies").returns( {
-            jobFamilyId: 1,
-            capabilityName: "Applied Innovation",
-            name: "You dont have access"
-        })
-    })
-    it('check for 200 code', async ()=>
+    this.beforeEach(() => {
+                postStub = sinon.stub(jobFamilyService, "createFamily").returns({
+                    capabilityName: "Applied Innovation",
+                    name: "test"
+                });
+                getStub = sinon.stub(jobFamilyService, "getJobFamilies").returns( {
+                    jobFamilyID: 1,
+                    capabilityName: "Applied Innovation",
+                    name: "You dont have access"
+
+                });
+            });
+
+    it('should return http code 200 when successfully creates job family', async ()=>
     {
-
         await supertest(app)
-        .get('/capability').set('Accept','application/json').expect(200);
+            .get('/new-job-family').set('Accept','application/json').expect(200);
     })
 
-    after(() =>{
-        serviceStub.restore();
+    it('check for 200 code on getJobFamily', async ()=>
+    {
+        await supertest(app)
+        .get('/job-family').set('Accept','application/json').expect(200);
+    })
+
+    afterEach (() =>{
+            postStub.restore();
+            getStub.restore();
     })
 })

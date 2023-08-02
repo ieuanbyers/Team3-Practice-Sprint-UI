@@ -1,6 +1,5 @@
 export interface JobFamilyRequest
 {
-    jobFamilyId?: number
-    capabilityName?: string
+    capabilityId?: number 
     name?: string
 }

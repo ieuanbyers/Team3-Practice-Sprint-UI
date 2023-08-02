@@ -1,11 +1,11 @@
 import axios, { AxiosResponse } from "axios";
-import { JobFamilyRequest } from "../model/jobFamilyRequest";
+import { JobFamilyResponse } from "../model/jobFamilyResponse";
 import { FailedToGetJobsError } from "../Errors/FailedToGetJobsError";
 import { FailedToGetJobFamiliesError } from "../Errors/FailedToGetJobFamilies";
-import { JobFamilyResponseRequest } from "../model/jobFamilyResponseRequest";
+import { JobFamilyRequest } from "../model/jobFamilyRequest";
 const jobFamilyRequestValidator = require("../validator/jobFamilyRequestValidator")
 
-module.exports.getJobFamilies = async function(): Promise<JobFamilyRequest[]>
+module.exports.getJobFamilies = async function(): Promise<JobFamilyResponse[]>
 {
     try
     {
@@ -19,7 +19,7 @@ module.exports.getJobFamilies = async function(): Promise<JobFamilyRequest[]>
     }
 }
 
-module.exports.createFamily = async function (JobFamilyResponseRequest: JobFamilyResponseRequest): Promise<number> {
+module.exports.createFamily = async function (JobFamilyResponseRequest: JobFamilyRequest): Promise<number> {
     const error: string = jobFamilyRequestValidator.validateJobFamilyRequest(JobFamilyResponseRequest)
 
         if (error) {

@@ -30,8 +30,8 @@
                         <label for="capability">Capability:</label>
                         <select class="form-select" name="capabilityId" id="capabilityId">
                             <option selected value="">Please choose a capability</option>
-                            {% for jobfamily in jobfamilies %}
-                            <option value="{{ jobfamily.capabilityId }}">{{ jobfamily.capabilityName }}</option>
+                            {% for capability in capabilities %}
+                            <option value="{{ capability.capabilityId }}">{{ capability.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
