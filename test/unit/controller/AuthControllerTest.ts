@@ -4,29 +4,37 @@ import sinon, {SinonStub} from "sinon";
 
 const authService = require('../../../service/authService');
 
-describe('authController', function () {
-    let stub: SinonStub;
+describe('get AuthController Tests', function () {
     it('check for 200 code on get', async ()=>
     {
         const response= await supertest(app)
             .get('/login').set('Accept','application/json').expect(200);
-        sinon.restore()
+    })
+})
+describe('post AuthController Tests', function () {
+    let stub: SinonStub;
+
+    beforeEach(() =>
+    {
+        stub = sinon.stub(authService,"login")
     })
 
     it('check for 302 code on post with valid login', async ()=>
     {
-        stub = sinon.stub(authService,"login").returns("token");
+        stub.returns("token");
         const response= await supertest(app)
             .post('/login').set('Accept','application/json').expect(302);
     })
 
     it('check for 200 code on post with invalid login', async ()=>
     {
-        stub = sinon.stub(authService,"login").throws(Error("could not login"));
+        stub.throws(Error("could not login"));
         const response= await supertest(app)
             .post('/login').set('Accept','application/json').expect(200);
     })
-    afterEach (() =>{
+
+    afterEach (() =>
+    {
         sinon.restore();
     })
 })

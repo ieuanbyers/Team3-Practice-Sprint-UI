@@ -1,8 +1,5 @@
-export class FailedToLogin implements Error {
+export class FailedToLogin extends Error {
     constructor(message: string) {
-        this.message = message;
+        super(message)
     }
-
-    message: string;
-    name: string;
 }

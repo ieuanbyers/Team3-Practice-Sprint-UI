@@ -1,21 +1,22 @@
-import {Login} from "../../../model/auth";
+import {LoginRequest} from "../../../model/auth";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import sinon from "sinon";
+import sinon, {SinonStub} from "sinon";
 const loginValidator = require("../../../validator/loginValidator")
-var chai = require('chai');
+const chai = require('chai');
 const expect = chai.expect;
 const authService = require('../../../service/authService');
 
 describe('AuthService', function () {
-
+    let stub:SinonStub;
+    beforeEach(() => { stub = sinon.stub(loginValidator,"validateLogin") })
     it('should return 200 with a token', async () => {
-        const testData: Login = {
+        const testData: LoginRequest = {
             username: "test@kainos.com",
             password: "password"
         }
+        stub.returns(null);
 
-        const stub = sinon.stub(loginValidator,"validateLogin").returns(null);
 
         let mock = new MockAdapter(axios);
 
@@ -27,16 +28,15 @@ describe('AuthService', function () {
         let results = await authService.login(testData);
         expect(results).to.equal("token");
 
-        sinon.restore();
     })
 
     it('should return error when validation string is not null', async () => {
-        const testData: Login = {
+        const testData: LoginRequest = {
             username: "test",
             password: "password"
         }
 
-        const stub = sinon.stub(loginValidator,"validateLogin").returns("email address not valid");
+        stub.returns("email address not valid");
 
         try
         {
@@ -45,17 +45,16 @@ describe('AuthService', function () {
         {
             expect(e.message).to.equal('email address not valid')
         }
-        sinon.restore();
 
     })
 
     it('should return error when axios returns 500', async () => {
-        const testData: Login = {
+        const testData: LoginRequest = {
             username: "test",
             password: "password"
         }
 
-        const stub = sinon.stub(loginValidator,"validateLogin").returns(null);
+        stub.returns(null);
 
         let mock = new MockAdapter(axios);
 
@@ -70,17 +69,16 @@ describe('AuthService', function () {
         {
             expect(e.message).to.equal('could not login')
         }
-        sinon.restore();
 
     })
 
     it('should return error when axios returns 400', async () => {
-        const testData: Login = {
+        const testData: LoginRequest = {
             username: "test",
             password: "password"
         }
 
-        const stub = sinon.stub(loginValidator,"validateLogin").returns(null);
+        stub.returns(null);
 
         let mock = new MockAdapter(axios);
 
@@ -95,7 +93,9 @@ describe('AuthService', function () {
         {
             expect(e.message).to.equal('could not login')
         }
-        sinon.restore();
+    })
 
+    afterEach (() =>{
+        sinon.restore();
     })
 })

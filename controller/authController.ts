@@ -1,5 +1,5 @@
 import {Application, Response, Request} from "express";
-import {Login} from "../model/auth";
+import {LoginRequest} from "../model/auth";
 
 const authService = require('../service/authService')
 
@@ -12,7 +12,7 @@ module.exports = function (app: Application)
 
     app.post('/login', async (req:Request,res:Response) =>
     {
-        let data: Login = req.body;
+        let data: LoginRequest = req.body;
         try{
             req.session.token = await authService.login(data)
 
