@@ -1,7 +1,7 @@
 import {LoginRequest} from "../model/auth";
 module.exports.validateLogin = function (login: LoginRequest): String
 {
-    if (login.username?.length === 0)
+    if (login.username?.length === 0 || login.username === null)
     {
         return "email is empty";
     }
@@ -11,7 +11,7 @@ module.exports.validateLogin = function (login: LoginRequest): String
         return "email address not valid";
     }
 
-    if (login.password?.length === 0)
+    if (login.password?.length === 0 || login.password === null)
     {
         return "password is empty";
     }
