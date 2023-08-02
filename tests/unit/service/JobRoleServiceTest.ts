@@ -23,7 +23,7 @@ describe('JobRoleService', function () {
 
             let results = await jobRoleService.getJobRoles();
 
-            expect(results[0]).to.deep.equal(data[0]);
+            expect(results[0]).to.deep.equal(testData);
         })
 
         it('should throw exception when 500 error returned from axios', async () => {
