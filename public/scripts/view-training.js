@@ -12,4 +12,4 @@ let options = {
             input: "form-control"
         }
     };
-const dataTable = new simpleDatatables.DataTable("#training-table", options)
+const dataTable = new simpleDatatables.DataTable("#training-table", options);
