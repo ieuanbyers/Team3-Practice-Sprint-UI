@@ -1,15 +1,26 @@
 {% include "./includes/header.html" %}
-<main>
-    <div>
-        <h2>Welcome to the Hackstreet Boys Project</h2>
+<div class="container pt-5">
+    <div class="text-center">
+        <h2>Select an action from the menu</h2>
     </div>
-    <div>
-        <h4 style="text-align: center;">On this page we have links to all the working features we have made so far</h4>
-        <h4 style="text-align: center;">The contents of this ppage can be altered to you're preferences</h4>
+    <div class="row pt-5">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5><i class="fa-brands fa-creative-commons-nd"></i> View Job Roles</h5>
+                    <p>View all current job roles</p>
+                    <a href="job-roles" class="btn btn-primary" role="button">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5><i class="fa-brands fa-teamspeak"></i> View Capabilities</h5>
+                    <p>View all Kainos capabilities</p>
+                    <a href="capability" class="btn btn-primary" role="button">View</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <a class="btn btn-primary" href="job-roles" style="background-color: #0072ed" role="button">View Job Roles</a></td>
-        <a class="btn btn-primary" href="capability" style="background-color: #0072ed" role="button">View Capabilities</a></td>
-    </div>
-</main>
 {% include "./includes/footer.html" %}
