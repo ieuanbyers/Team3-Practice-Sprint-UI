@@ -18,7 +18,7 @@ describe('TrainingService', function  () {
 
     before(() => {
         originalEnv = process.env;
-        process.env.API_URL = 'http://localhost:3000';
+        process.env.baseURL = 'http://localhost:3000';
     });
 
     after(() => {
