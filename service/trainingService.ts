@@ -1,8 +1,7 @@
-import { AxiosResponse } from 'axios';
 import { FailedToGetTrainingError } from '../Errors/failedToGetTrainingError';
 import { type Training } from '../model/training'
 import { getEnvConfig } from './configService';
-const axios = require('axios')
+import axios, { AxiosResponse } from 'axios';
 
 module.exports.URL = '/api/training/';
 

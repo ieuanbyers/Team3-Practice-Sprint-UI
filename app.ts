@@ -1,8 +1,7 @@
-import { Request, Response } from "express";
-const session = require('express-session');
-const express = require('express');
-const path = require('path');
-const nunjucks = require('nunjucks');
+import express, { Request, Response } from "express";
+import session from "express-session";
+import path from "path";
+import nunjucks from "nunjucks";
 
 export const app = express();
 
@@ -19,13 +18,13 @@ nunjucks.configure(appViews, nunjucksConfig);
 //ConfigureExpress
 app.set('view engine', 'html');
 
-app.use('/public', express.static(path.join(__dirname, '/public')));
+app.use('/public', express.static(path.join(__dirname, '../public')));
 
 app.use(express.json())
 
 app.use(express.urlencoded({extended: true}));
 
-app.use(session({secret: 'NOT HARDODED SECRET', cookie: {maxAge: 60000}}));
+app.use(session({secret: 'NOT HARDCODED SECRET', cookie: {maxAge: 60000}}));
 declare module "express-session"
 {
     interface SessionData{
@@ -39,8 +38,6 @@ app.listen(3000, ()=>{
 
 
 //Express Routes
-
-
 app.get('/', async (req: Request, res: Response)=>
 {
     res.render('index', {

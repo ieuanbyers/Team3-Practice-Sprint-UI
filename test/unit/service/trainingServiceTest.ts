@@ -1,14 +1,15 @@
 import { type Training } from '../../../model/training'
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import chai from 'chai';
 
-const axios = require('axios');
-const MockAdapter = require('axios-mock-adapter');
-const chai = require('chai');
 const expect = chai.expect;
 const trainingService = require('../../../service/trainingService');
-const training = {
+const training: Training = {
     name: 'Test Course',
     link: 'http://localhost:3000',
     category: 'Test Category',
+    bandName: 'Test Band'
   };
 
 const endpointURL = 'http://localhost:3000' + trainingService.URL;
