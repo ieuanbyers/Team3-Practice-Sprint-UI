@@ -4,7 +4,6 @@ export interface JobRoleResponse
     jobTitle?: string
     bandId?: number
     bandName?: string
-    jobRoleFamilyId?: number
     jobRoleFamilyName?: string
     capabilityName?: string
 }

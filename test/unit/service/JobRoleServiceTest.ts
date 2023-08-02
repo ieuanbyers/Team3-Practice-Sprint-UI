@@ -10,7 +10,6 @@ const testData: JobRoleResponse = {
     jobTitle: "Software Engineer",
     bandId: 1,
     bandName: "Band 1",
-    jobRoleFamilyId: 1,
     jobRoleFamilyName: "Test Family",
     capabilityName: "Test Capability"
 }
