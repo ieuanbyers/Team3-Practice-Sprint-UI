@@ -1,8 +1,8 @@
 export class FailedToGetCapabilitiesError implements Error {
-    constructor(message: string) {
-        this.message = message;
-    }
+	constructor(message: string) {
+		this.message = message;
+	}
 
-    message: string;
-    name: string;
+	message: string;
+	name: string;
 }
