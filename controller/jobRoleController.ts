@@ -12,7 +12,7 @@ module.exports = function(app: Application)
 {
 	app.get('/job-roles', async(req: Request, res: Response) =>
 	{
-		let jobRoles: JobRoleResponse[];
+		let jobRoles: JobRoleResponse[] = [];
 		try
 		{
 			jobRoles = await jobRoleService.getJobRoles();
