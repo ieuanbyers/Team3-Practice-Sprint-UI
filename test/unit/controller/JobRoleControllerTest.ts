@@ -1,6 +1,6 @@
-import supertest from "supertest";
-import {app} from "../../../app";
-import sinon, { SinonStub } from "sinon";
+import supertest from 'supertest';
+import {app} from '../../../app';
+import sinon, { SinonStub } from 'sinon';
 
 const jobRoleService = require('../../../service/JobRoleService');
 
