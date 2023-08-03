@@ -1,0 +1,28 @@
+{% include "./includes/header.html" %}
+<main class="container mt-4">
+    <section id="trainingCourses" class="mt-4">
+        {% if trainingCourses and trainingCourses.length > 0 %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trainingCourse in trainingCourses %}
+                <tr>
+                    <td>{{ trainingCourse.name }}</td>
+                    <td>{{ trainingCourse.category }}</td>
+                    <td><a href="{{ trainingCourse.link }}">View Course</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>There are currently no training courses for this band.</p>
+        {% endif %}
+    </section>
+</main>
+{% include "./includes/footer.html" %}
