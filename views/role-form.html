@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-    <header class="bg-dark text-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Add Role</h1>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="container mt-4">
+{% include "./includes/header.html" %}
+    <div class="container mt-4">
         <section id="form" class="bg-light py-5">
             <div class="container">
                 <p>Enter Role details</p>
@@ -51,6 +34,5 @@
                 </form>
             </div>
         </section>
-    </main>
-</body>
-</html>
+    </div>
+{% include "./includes/footer.html" %}
