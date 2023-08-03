@@ -40,9 +40,13 @@ module.exports = function(app: Application)
             const id:Number = await jobRoleService.createJobRole(data)
             res.redirect('/job-roles')
         } catch (e) {
+            let Bands: Band[] = [];
+            let jobFamilies: JobFamily[] = [];
+            Bands = await bandService.getAllBands();
+            jobFamilies = await jobFamilyService.getJobFamilies();
             console.error(e);
             res.locals.errormessage = e.message
-            res.render('add-capabilty', data)
+            res.render('role-form', {data, bands: Bands, jobfamilies: jobFamilies});
         }
     });
 }
