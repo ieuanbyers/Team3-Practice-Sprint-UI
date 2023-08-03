@@ -10,8 +10,7 @@ describe('JobRoleController', function () {
     before(() => {
         serviceStub = sinon.stub(jobRoleService, "getJobRoles").returns( {
             roleId: 1,
-            roleTitle: "Applied Innovation",
-            bandId: 1,
+            jobTitle: "Applied Innovation",
             bandName: "Trainee",
             jobFamilyName: "Engineering",
             capabilityName: "Engineering"
