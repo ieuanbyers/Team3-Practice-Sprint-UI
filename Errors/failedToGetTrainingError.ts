@@ -1,4 +1,4 @@
-export class FailedToGetCapabilitiesError implements Error {
+export class FailedToGetTrainingError implements Error {
 	constructor(message: string) {
 		this.message = message;
 	}
