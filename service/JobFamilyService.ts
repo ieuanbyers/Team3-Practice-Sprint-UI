@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
 import { JobFamilyResponse } from '../model/JobFamilyResponse';
-import { FailedToGetJobsError } from '../Errors/FailedToGetJobsError';
 import { FailedToGetJobFamiliesError } from '../Errors/FailedToGetJobFamilies';
 
 module.exports.getJobFamilies = async function(): Promise<JobFamilyResponse[]>
