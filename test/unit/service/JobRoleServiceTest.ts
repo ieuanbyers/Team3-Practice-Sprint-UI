@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-import {JobRoleResponse} from "../../../model/JobRoleResponse";
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
-import { JobRoleRequest } from "../../../model/JobRoleRequest";
-var chai = require('chai');
-=======
-
 import {JobRoleResponse} from '../../../model/JobRoleResponse';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { JobRoleRequest } from '../../../model/JobRoleRequest';
 const chai = require('chai');
->>>>>>> 0e7c908 (Fixed linting errors)
 const expect = chai.expect;
 const jobRoleService = require('../../../service/JobRoleService');
 
