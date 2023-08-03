@@ -40,8 +40,8 @@ app.listen(3000, () => {
 });
 
 app.get('/',  async (req:Request, res:Response) => {
-    res.render('index', { title: 'Hackstreet Boys' })
-})
+	res.render('index', { title: 'Hackstreet Boys' });
+});
 
 require('./controller/competencyController')(app);
 require('./controller/jobRoleController')(app);
