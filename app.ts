@@ -18,7 +18,9 @@ nunjucks.configure(appViews, nunjucksConfig);
 //ConfigureExpress
 app.set('view engine', 'html');
 
-app.use('/public', express.static(path.join(__dirname, '/public')));
+app.set('view engine','html');
+
+app.use('/public', express.static(path.join(__dirname, '../public')));
 
 app.use(express.json());
 
@@ -38,11 +40,8 @@ app.listen(3000, () => {
 });
 
 app.get('/',  async (req:Request, res:Response) => {
-	res.render('index', {
-		title: 'Hack Street Boys',
-	});
+	res.render('index', { title: 'Hackstreet Boys' });
 });
-
 
 require('./controller/competencyController')(app);
 require('./controller/jobRoleController')(app);

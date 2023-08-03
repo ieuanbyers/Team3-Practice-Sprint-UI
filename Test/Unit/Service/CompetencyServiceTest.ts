@@ -11,8 +11,7 @@ const comp: CompetencyResponse = {
 	bandName: 'You guessed it, testing',
 };
 
-const endpointURL = 'http://localhost:3000' + competencyService.URL;
-
+const endpointURL = process.env.API_URL + competencyService.URL;
 
 describe('CompetencyService', function  () {
 	let originalEnv: NodeJS.ProcessEnv;
@@ -26,43 +25,41 @@ describe('CompetencyService', function  () {
 		process.env = originalEnv;
 	});
 
-	describe('competencyService', function () {
-		describe('getCompsWithBand', function () {
-			it('should return comps from response', async () => {
-				const mock = new MockAdapter(axios);
-				const bandId = 1;
-				const data: CompetencyResponse[] = [comp];
+	describe('getCompsWithBand', function () {
+		it('should return comps from response', async () => {
+			const mock = new MockAdapter(axios);
+			const bandId = 1;
+			const data: CompetencyResponse[] = [comp];
 
-				mock.onGet(endpointURL + bandId).reply(200, data);
+			mock.onGet(endpointURL + bandId).reply(200, data);
 
-				const results = await competencyService.getCompsWithBand(bandId);
+			const results = await competencyService.getCompsWithBand(bandId);
 
-				expect(results[0]).to.deep.equal(comp);
-			});
-      
+			expect(results[0]).to.deep.equal(comp);
+		});
+	
 
-			it('should throw exception when 500 error returned from axios', async () => {
-				const mock = new MockAdapter(axios);
-				const bandId: number = 1;
-  
-				mock.onGet(endpointURL + bandId).reply(500);
-      
-				try{
-					await competencyService.getCompsWithBand(bandId);
-				} catch(e){
-					expect(e.message).to.equal('Could not get competencies');
-				}
-			});
+		it('should throw exception when 500 error returned from axios', async () => {
+			const mock = new MockAdapter(axios);
+			const bandId: number = 1;
 
-			it('should not call axios when bandId is null', async () => {
-				const bandId: number = null;
-  
-				try{
-					await competencyService.getCompsWithBand(bandId);
-				} catch(e){
-					expect(e.message).to.equal('BandID does not exist');
-				}
-			});
+			mock.onGet(endpointURL + bandId).reply(500);
+	
+			try{
+				await competencyService.getCompsWithBand(bandId);
+			} catch(e){
+				expect(e.message).to.equal('Could not get competencies');
+			}
+		});
+
+		it('should not call axios when bandId is null', async () => {
+			const bandId: number = null;
+
+			try{
+				await competencyService.getCompsWithBand(bandId);
+			} catch(e){
+				expect(e.message).to.equal('BandID does not exist');
+			}
 		});
 	});
 });

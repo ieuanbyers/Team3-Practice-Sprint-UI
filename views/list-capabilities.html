@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Capabilities</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<header class="bg-dark text-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Capabilities</h1>
-            </div>
-        </div>
-    </div>
-</header>
-<main class="container mt-4">
+{% include "./includes/header.html" %}
+<div class="container mt-4">
     <section id="job-roles" class="mt-4">
         <h2>Capabilities</h2>
         {% if capabilities and capabilities.length > 0 %}
@@ -39,6 +23,5 @@
         There are no Capabilities.
         {% endif %}
     </section>
-</main>
-</body>
-</html>
+</div>
+{% include "./includes/footer.html" %}
