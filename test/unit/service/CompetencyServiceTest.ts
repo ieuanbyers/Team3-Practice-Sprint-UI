@@ -38,7 +38,6 @@ describe('CompetencyService', function  () {
 			expect(results[0]).to.deep.equal(comp);
 		});
 	
-
 		it('should throw exception when 500 error returned from axios', async () => {
 			const mock = new MockAdapter(axios);
 			const bandId: number = 1;
