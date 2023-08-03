@@ -27,11 +27,11 @@
                 {% endif %}
                 <form action="/new-job-role" method="post">
                     <div class="form-group">
-                        <label for="Title">Title:</label>
+                        <label class="form-label" for="roleTitle">Title:</label>
                         <input type="text" id="roleTitle" name="roleTitle" class="form-control" value="{{ roleTitle }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="job-family">Job Family:</label>
+                        <label class="form-label" for="jobFamilyId">Job Family:</label>
                         <select class="form-select" name="jobFamilyId" id="jobFamilyId">
                             <option selected value="">Please choose a job family</option>
                             {% for jobfamily in jobfamilies %}
@@ -40,7 +40,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="band">Band:</label>
+                        <label class="form-label" for="bandId">Band:</label>
                         <select class="form-select" name="bandId" id="bandId">
                             <option selected value="">Please choose a band</option>
                             {% for band in bands %}

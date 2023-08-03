@@ -9,6 +9,6 @@ module.exports.getAllBands = async function()
         return res.data;
     } catch(e)
     {
-        console.error('Failed to get job families')
+        console.error('Failed to get bands')
     }
 }
