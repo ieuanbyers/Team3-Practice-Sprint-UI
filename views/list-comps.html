@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competencies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Competencies</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mt-4">
+        <section id="orders" class="mt-4">
+            <h2>Competencies</h2>
+            {% if competencies and competencies.length > 0 %} 
+            <table class="table">
+                <thread>
+                    <tr>
+                        <th scope="col">Competency Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Band Name</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    {% for comp in competencies %}
+                    <tr>
+                        <td>{{ comp.competencyName }}</td>
+                        <td>{{ comp.description }}</td>
+                        <td>{{ comp.bandName }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                There are no Competencies.
+            {% endif %}
+        </section>
+    </main>
+</body>
