@@ -1,9 +1,9 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { CapabilityRequest } from "../../../model/capabilityRequest";
+import { CapabilityRequest } from "../../../model/CapabilityRequest";
 const chai = require('chai');
 const expects = chai.expect;
-const capabilityService = require('../../../service/capabilityService');
+const capabilityService = require('../../../service/CapabilityService');
 const capabilityRequest: CapabilityRequest = {
     name: "Chai",
     description: "Mocha",

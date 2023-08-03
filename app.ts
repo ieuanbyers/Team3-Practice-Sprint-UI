@@ -1,6 +1,6 @@
 import express, { Request, Response} from "express";
 
-import { CapabilityRequest } from "./model/capabilityRequest";
+import { CapabilityRequest } from "./model/CapabilityRequest";
 export const app = express();
 import path from "path";
 import nunjucks from "nunjucks";

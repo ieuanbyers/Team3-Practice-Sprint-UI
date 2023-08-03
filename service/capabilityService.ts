@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { Capability } from "../model/Capability";
 import { FailedToGetCapabilitiesError } from "../Errors/FailedToGetCapabilitiesError";
-import { CapabilityRequest } from "../model/capabilityRequest";
+import { CapabilityRequest } from "../model/CapabilityRequest";
 const CapabilityRequestValidator = require('../validator/CapabilityRequestValidator');
 
 module.exports.getCapabilities = async function(): Promise<Capability[]>
