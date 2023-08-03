@@ -1,5 +1,5 @@
 {
-  "name": "nodeninjas-node.js-project",
+  "name": "Team3-Practice-Sprint-UI",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -43,6 +43,7 @@
     "selenium-webdriver": "^4.10.0",
     "sinon": "^15.2.0",
     "supertest": "^6.3.3",
+    "ts-mockito": "^2.6.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }

@@ -7,7 +7,7 @@ module.exports = function(app: Application)
 {
 	app.get('/capability', async(req: Request, res: Response) =>
 	{
-		let data: Capability[];
+		let data: Capability[] = [];
 
 		try
 		{
