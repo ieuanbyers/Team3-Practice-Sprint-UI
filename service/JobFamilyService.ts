@@ -1,17 +1,14 @@
-import axios, { AxiosResponse } from 'axios';
-import { JobFamilyResponse } from '../model/JobFamilyResponse';
-import { FailedToGetJobFamiliesError } from '../Errors/FailedToGetJobFamilies';
+import axios, {AxiosResponse} from 'axios';
 
-module.exports.getJobFamilies = async function(): Promise<JobFamilyResponse[]>
+module.exports.getJobFamilies = async function()
 {
 	try
 	{
 		const baseURL = process.env.baseURL;
-		const response:AxiosResponse = await axios.get(`${baseURL}/api/job-family`);
-
-		return response.data;
+		const res:AxiosResponse = await axios.get(`${baseURL}/api/job-families`);
+		return res.data;
 	} catch(e)
 	{
-		throw new FailedToGetJobFamiliesError('Could not get job families');
+		console.error('Failed to get job families');
 	}
 };

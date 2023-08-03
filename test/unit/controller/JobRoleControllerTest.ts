@@ -5,25 +5,40 @@ import sinon, { SinonStub } from 'sinon';
 const jobRoleService = require('../../../service/JobRoleService');
 
 describe('JobRoleController', function () {
-	let serviceStub: SinonStub;
+	let postStub: SinonStub;
+	let getStub: SinonStub;
 
-	before(() => {
-		serviceStub = sinon.stub(jobRoleService, 'getJobRoles').returns( {
+	this.beforeEach(() => {
+		postStub = sinon.stub(jobRoleService,'createJobRole').returns({
+			roleTitle: 'Software Engineer',
+			jobFamilyId: 2,
+			bandId: 1
+		});
+
+		getStub = sinon.stub(jobRoleService, 'getJobRoles').returns( {
 			roleId: 1,
 			jobTitle: 'Applied Innovation',
-			bandName: 'Trainee',
-			jobFamilyName: 'Engineering',
-			capabilityName: 'Engineering'
+			jobRoleFamilyId: 1
 		});
-	}
-	);
-	it('check for 200 code', async ()=>
+	});
+
+        
+
+	it('check for 200 code on createJobRole', async ()=>
+	{
+		await supertest(app)
+			.get('/new-job-role').set('Accept','application/json').expect(200);
+	});
+  
+	it('check for 200 code on getJobRoles', async ()=>
 	{
 		await supertest(app)
 			.get('/job-roles').set('Accept','application/json').expect(200);
 	});
 
-	after (() =>{
-		serviceStub.restore();
+
+	afterEach (() =>{
+		postStub.restore();
+		getStub.restore();
 	});
 });
