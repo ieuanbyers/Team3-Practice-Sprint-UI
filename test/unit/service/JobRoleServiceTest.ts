@@ -1,84 +1,95 @@
+<<<<<<< HEAD
 import {JobRoleResponse} from "../../../model/JobRoleResponse";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { JobRoleRequest } from "../../../model/JobRoleRequest";
 var chai = require('chai');
+=======
+
+import {JobRoleResponse} from '../../../model/JobRoleResponse';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import { JobRoleRequest } from '../../../model/JobRoleRequest';
+const chai = require('chai');
+>>>>>>> 0e7c908 (Fixed linting errors)
 const expect = chai.expect;
 const jobRoleService = require('../../../service/JobRoleService');
 
 const postTestData: JobRoleRequest = {
-    roleTitle: "Test Engineer",
-    jobFamilyId: 2,
-    bandId: 1
-}
+	roleTitle: 'Test Engineer',
+	jobFamilyId: 2,
+	bandId: 1
+};
 
 const getTestData: JobRoleResponse = {
-    roleId: 1,
-    roleTitle: "Software Engineer",
-    bandName: "Trainee",
-    jobFamilyName: "Engineering",
-    capabilityName: "Engineering"
-}
+	roleId: 1,
+	roleTitle: 'Software Engineer',
+	bandName: 'Trainee',
+	jobFamilyName: 'Engineering',
+	capabilityName: 'Engineering'
+};
 
 describe('JobRoleService', function () {
   
-    describe('createJobRole', function () {
+	describe('createJobRole', function () {
       
-        it('should return an id after creating a role', async () => {
-            var mock = new MockAdapter(axios);
+		it('should return an id after creating a role', async () => {
+			const mock = new MockAdapter(axios);
 
-            const id = 1;
+			const id = 1;
 
-            mock.onPost(`${jobRoleService.URL}/api/job-roles`).reply(201, id);
+			mock.onPost(`${jobRoleService.URL}/api/job-roles`).reply(201, id);
 
-            var result = await jobRoleService.createJobRole(postTestData);
+			const result = await jobRoleService.createJobRole(postTestData);
 
-            expect(result).to.equal(id);
-        })
+			expect(result).to.equal(id);
+		});
 
-        it('should return a 500 error after failing to create a role', async () => {
-            var mock = new MockAdapter(axios);
+		it('should return a 500 error after failing to create a role', async () => {
+			const mock = new MockAdapter(axios);
 
-            mock.onPost(jobRoleService.URL).reply(500);
+			mock.onPost(jobRoleService.URL).reply(500);
 
-            try{
-                let result = await jobRoleService.createJobRole(postTestData);
-            } catch(e){
-                expect(e.message).to.equal('Could not create role');
-            }
-        })
+			try{
+				await jobRoleService.createJobRole(postTestData);
+			} catch(e){
+				expect(e.message).to.equal('Could not create role');
+			}
+		});
 
-        it('should return a 400 error after failing to create a role', async () => {
-            var mock = new MockAdapter(axios);
+		it('should return a 400 error after failing to create a role', async () => {
+			const mock = new MockAdapter(axios);
 
-            mock.onPost(jobRoleService.URL).reply(400);
+			mock.onPost(jobRoleService.URL).reply(400);
 
-            try{
-                let result = await jobRoleService.createJobRole(postTestData);
-            } catch(e){
-                expect(e.message).to.equal('Could not create role');
-            }
-        })
-    })
+			try{
+				await jobRoleService.createJobRole(postTestData);
+			} catch(e){
+				expect(e.message).to.equal('Could not create role');
+			}
+		});
+	});
   
-  describe('getJobRoles', function () {
+	describe('getJobRoles', function () {
+		it('should return job roles info from response', async () => {
+			const mock = new MockAdapter(axios);
+			const data = [getTestData];
+			mock.onGet(`${jobRoleService.URL}/api/job-roles`).reply(200, data);
+			mock.onGet(jobRoleService.URL).reply(200, data);
+			const results = await jobRoleService.getJobRoles();
+			expect(results[0]).to.deep.equal(getTestData);
+		});
     
-      it('should return job roles info from response', async () => {
-        let mock = new MockAdapter(axios);
-        const data = [getTestData];
-        mock.onGet(`${jobRoleService.URL}/api/job-roles`).reply(200, data);
-	      const results = await jobRoleService.getJobRoles();
-        expect(results[0]).to.deep.equal(getTestData);
-    })
-
-	  it('should throw exception when 500 error returned from axios', async () => {
-		  const mock = new MockAdapter(axios);
-		  mock.onGet(jobRoleService.URL).reply(500);
-            try {
-                await jobRoleService.getJobRoles();
-            } catch (e) {
-                expect(e.message).to.equal('Could not get job roles')
-            }
-        })
-  })
-})
+		it('should throw exception when 500 error returned from axios', async () => {
+			const mock = new MockAdapter(axios);
+			mock.onGet(jobRoleService.URL).reply(500);
+			try
+			{
+				await jobRoleService.getJobRoles();
+			} catch (e)
+			{
+				expect(e.message).to.equal('Could not get job roles');
+			}
+		});
+	});
+});
