@@ -1,1 +1,35 @@
-<p>Here.</p>
+{% include "./includes/header.html" %}
+<div class="container pt-5">
+    <div class="text-center">
+        <h2>Select an action from the menu</h2>
+    </div>
+    <div class="row pt-5">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5><i class="fa-brands fa-creative-commons-nd"></i> View Job Roles</h5>
+                    <p>View all current job roles</p>
+                    <a href="job-roles" class="btn btn-primary" role="button">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5><i class="fa-brands fa-teamspeak"></i> View Capabilities</h5>
+                    <p>View all Kainos capabilities</p>
+                    <a href="capability" class="btn btn-primary" role="button">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5><i class="fa-solid fa-people-group"></i> View Job Families</h5>
+                    <p>View all Kainos job families</p>
+                    <a href="job-family" class="btn btn-primary" role="button">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include "./includes/footer.html" %}
