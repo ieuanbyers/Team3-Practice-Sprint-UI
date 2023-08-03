@@ -4,7 +4,7 @@ import { Band } from '../model/Band';
 import { JobFamily } from '../model/JobFamily';
 import { JobRoleRequest } from '../model/JobRoleRequest';
 
-const jobRoleService = require('../service/JobRoleService')
+const jobRoleService = require('../service/JobRoleService');
 const bandService = require('../service/BandService');
 const jobFamilyService = require('../service/JobFamilyService');
 
