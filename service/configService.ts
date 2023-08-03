@@ -1,7 +1,7 @@
-import { envConfig } from "../model/envConfig"
+import { envConfig } from '../model/envConfig';
 
 export function getEnvConfig(): envConfig {
-    return {
-        api_url: process.env.API_URL
-    }
+	return {
+		api_url: process.env.API_URL
+	};
 }
