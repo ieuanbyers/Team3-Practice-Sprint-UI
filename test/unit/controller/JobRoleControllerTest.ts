@@ -11,7 +11,9 @@ describe('JobRoleController', function () {
 		serviceStub = sinon.stub(jobRoleService, 'getJobRoles').returns( {
 			roleId: 1,
 			jobTitle: 'Applied Innovation',
-			jobRoleFamilyId: 1
+			bandName: 'Trainee',
+			jobFamilyName: 'Engineering',
+			capabilityName: 'Engineering'
 		});
 	}
 	);
