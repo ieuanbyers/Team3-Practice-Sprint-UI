@@ -1,42 +1,42 @@
-import { Capability } from "../../../model/capability";
-import axios from "axios"
-import MockAdapter from "axios-mock-adapter"
+import { Capability } from '../../../model/Capability';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 
-var chai = require('chai');  
+const chai = require('chai');  
 const expect = chai.expect;
-const capabilityService = require ('../../../service/CapabilityService')
+const capabilityService = require ('../../../service/CapabilityService');
 
 const capability: Capability = {
-  capabilityId: 1,
-  name: "Applied Innovation",
-  description: "You dont have access"
-}
+	capabilityId: 1,
+	name: 'Applied Innovation',
+	description: 'You dont have access'
+};
 
 describe('CapabilityService', function () {
-  describe('getCapabilities', function() {
-    it('should return capability info from response', async () => {
+	describe('getCapabilities', function() {
+		it('should return capability info from response', async () => {
     
-      let mock = new MockAdapter(axios);
+			const mock = new MockAdapter(axios);
 
-      const data = [capability];
+			const data = [capability];
 
-      mock.onGet(capabilityService.URL).reply(200, data);
+			mock.onGet(capabilityService.URL).reply(200, data);
 
-      let results = await capabilityService.getCapabilities();
+			const results = await capabilityService.getCapabilities();
 
-      expect(results[0]).to.deep.equal(capability);
-    })
+			expect(results[0]).to.deep.equal(capability);
+		});
 
-    it('should throw exception when 500 error returned from axios', async () => {
-        var mock = new MockAdapter(axios);
+		it('should throw exception when 500 error returned from axios', async () => {
+			const mock = new MockAdapter(axios);
 
-        mock.onGet(capabilityService.URL).reply(500);
+			mock.onGet(capabilityService.URL).reply(500);
 
-        try {
-          var error = await capabilityService.getCapabilities();
-        } catch (error){
-          expect(error.message).to.equal('Could not get capabilities')
-        }
-      })
-  })
-})
+			try {
+				await capabilityService.getCapabilities();
+			} catch (error){
+				expect(error.message).to.equal('Could not get capabilities');
+			}
+		});
+	});
+});
