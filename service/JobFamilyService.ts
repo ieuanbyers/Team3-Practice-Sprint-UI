@@ -5,7 +5,7 @@ module.exports.getJobFamilies = async function()
 	try
 	{
 		const baseURL = process.env.baseURL;
-		const res:AxiosResponse = await axios.get(`${baseURL}/api/job-families`);
+		const res:AxiosResponse = await axios.get(`${baseURL}/api/job-family`);
 		return res.data;
 	} catch(e)
 	{

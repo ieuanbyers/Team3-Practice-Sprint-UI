@@ -1,4 +1,4 @@
-import {JobRoleResponse} from '../../../model/JobRoleResponse';
+import { JobRoleResponse } from '../../../model/JobRoleResponse';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { JobRoleRequest } from '../../../model/JobRoleRequest';
