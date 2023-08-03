@@ -1,9 +1,10 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
+import { CapabilityRequest } from "../../../model/capabilityRequest";
 var chai = require('chai');
 const expects = chai.expect;
 const capabilityService = require('../../../service/capabilityService');
-const capabilityRequest = {
+const capabilityRequest: CapabilityRequest = {
     name: "Chai",
     description: "Mocha",
 }
@@ -18,8 +19,7 @@ describe('capabilityService', function () {
             mock.onPost(capabilityService.URL).reply(201, id);
 
             var result = await capabilityService.createCapability(capabilityRequest);
-            console.log(result)
-
+        
             expects(result).to.equal(id);
         })
 

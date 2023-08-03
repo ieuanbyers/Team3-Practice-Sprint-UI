@@ -7,8 +7,8 @@ const capabilityService = require('../service/capabilityService')
 module.exports = function(app: Application)
 {
 
-    app.get('/success', async (req: Request, res: Response) => {
-        res.render('success')
+    app.get('/list-capabilities', async (req: Request, res: Response) => {
+        res.render('list-capabilities')
     })
 
     app.get('/add-capability', async (req: Request, res: Response) => {

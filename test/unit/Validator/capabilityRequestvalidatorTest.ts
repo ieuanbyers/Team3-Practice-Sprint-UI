@@ -1,4 +1,4 @@
-var chai = require('chai');
+const chai = require('chai');
 export {};
 const capabilityRequestValidator = require('../../../validator/CapabilityRequestValidator');
 const expecting = chai.expect;

@@ -45,4 +45,3 @@ app.get('/',  async (req:Request, res:Response) => {
 
 require('./controller/jobRoleController')(app);
 require('./controller/capabilityController')(app);
-
