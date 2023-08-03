@@ -1,4 +1,4 @@
-import express, { Request, Response} from 'express';
+import express, { Request, Response } from 'express';
 import session from 'express-session';
 import path from 'path';
 import nunjucks from 'nunjucks';
@@ -43,6 +43,8 @@ app.get('/',  async (req:Request, res:Response) => {
 	});
 });
 
+
+require('./controller/competencyController')(app);
 require('./controller/jobRoleController')(app);
 require('./controller/CapabilityController')(app);
 require('./controller/trainingController')(app);
