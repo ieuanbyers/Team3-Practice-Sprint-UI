@@ -41,7 +41,7 @@ module.exports = function(app: Application)
 	app.post('/new-job-family', async (req, res) => {
 		const data: JobFamilyRequest = req.body;
 		try {        
-			const id:number = await jobFamilyService.createFamily(data);
+			await jobFamilyService.createFamily(data);
 			res.redirect('/job-family');
 		} catch (e) {
 			console.error(e);

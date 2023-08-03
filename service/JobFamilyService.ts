@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
 import { JobFamilyResponse } from '../model/jobFamilyResponse';
-import { FailedToGetJobsError } from '../Errors/FailedToGetJobsError';
 import { FailedToGetJobFamiliesError } from '../Errors/FailedToGetJobFamilies';
 import { JobFamilyRequest } from '../model/jobFamilyRequest';
 const jobFamilyRequestValidator = require('../validator/jobFamilyRequestValidator');

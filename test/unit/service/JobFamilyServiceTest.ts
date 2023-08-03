@@ -37,7 +37,7 @@ describe('JobFamilyService', function () {
 			mock.onPost(jobFamilyService.URL).reply(500);
 
 			try{
-				const result = await jobFamilyService.createFamily(postFamily);
+				await jobFamilyService.createFamily(postFamily);
 			} catch(e){
 				expect(e.message).to.equal('Could not create Job Family');
 			}
@@ -49,7 +49,7 @@ describe('JobFamilyService', function () {
 			mock.onPost(jobFamilyService.URL).reply(400);
 
 			try{
-				const result = await jobFamilyService.createFamily(postFamily);
+				await jobFamilyService.createFamily(postFamily);
 			} catch(e){
 				expect(e.message).to.equal('Could not create Job Family');
 			}
