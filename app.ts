@@ -15,7 +15,6 @@ const nunjucksConfig = {
 
 nunjucks.configure(appViews, nunjucksConfig);
 
-//ConfigureExpress
 app.set('view engine', 'html');
 
 app.use('/public', express.static(path.join(__dirname, '/public')));
@@ -26,12 +25,12 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(session({ secret: 'NOT HARDCODED SECRET', cookie:{maxAge: 60000}}));
 
-declare module 'express-session'
-{
-    interface SessionData{
-        token: string
-    }
+declare module 'express-session' {
+	interface SessionData {
+		token: string;
+	}
 }
+
 
 app.listen(3000, () => {
 	console.log('Server listening on port 3000');
@@ -46,5 +45,6 @@ app.get('/',  async (req:Request, res:Response) => {
 
 require('./controller/competencyController')(app);
 require('./controller/jobRoleController')(app);
+require('./controller/authController')(app);
 require('./controller/CapabilityController')(app);
 require('./controller/trainingController')(app);
