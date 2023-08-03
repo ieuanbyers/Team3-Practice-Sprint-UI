@@ -20,3 +20,9 @@ npm  test
 ```
 export baseURL="http://localhost:8080" && npm start
 ```
+
+### To build docker image
+`docker build --build-arg baseURL=${baseURL} -t Team-3-UI:0.1 .`
+
+### To Run docker image
+`docker run Team-3-UI:0.1`
