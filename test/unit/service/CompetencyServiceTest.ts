@@ -38,7 +38,6 @@ describe('CompetencyService', function  () {
 			expect(results[0]).to.deep.equal(comp);
 		});
 	
-<<<<<<< HEAD
 		it('should throw exception when 500 error returned from axios', async () => {
 			const mock = new MockAdapter(axios);
 			const bandId: number = 1;
@@ -52,22 +51,6 @@ describe('CompetencyService', function  () {
 			}
 		});
 
-=======
-
-		it('should throw exception when 500 error returned from axios', async () => {
-			const mock = new MockAdapter(axios);
-			const bandId: number = 1;
-
-			mock.onGet(endpointURL + bandId).reply(500);
-	
-			try{
-				await competencyService.getCompsWithBand(bandId);
-			} catch(e){
-				expect(e.message).to.equal('Could not get competencies');
-			}
-		});
-
->>>>>>> main
 		it('should not call axios when bandId is null', async () => {
 			const bandId: number = null;
 
